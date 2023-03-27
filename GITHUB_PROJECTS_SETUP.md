@@ -41,6 +41,7 @@ Displays a board of the the current sprint:
 - Column field: Status
 - Field sum: Count
 - Sort: Manual
+- Filter: `-status:"✏️ Draft"`
 
 ### Drafts
 
