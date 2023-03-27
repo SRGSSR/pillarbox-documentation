@@ -6,7 +6,7 @@ This article describes how we manage [our product](https://github.com/orgs/SRGSS
 
 We currently use 3 settings:
 
-- **Status** for the various statuses an issue might have in our worklow. Statuses must be defined in the following order so that board columns are ordered correctly:
+- **Status** for the various statuses an issue might have in our workflow. Statuses must be defined in the following order so that board columns are ordered correctly:
   - **✏️ Draft**: Tasks which have not been sufficiently refined yet.
   - **📋 Backlog**: Tasks which are ready to be planned.
   - **🚧  In Progress**: Tasks currently being worked on.
