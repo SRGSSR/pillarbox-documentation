@@ -49,7 +49,7 @@ Displays a board of the the current sprint:
 Displays all issues to be refined per platform:
 
 - Layout: Table
-- Fields: Title, Platform, Labels
+- Fields: Title, Milestone, Platform, Labels
 - Group: Platform
 - Field sum: Count
 - Sort: Manual
@@ -93,7 +93,7 @@ Displays the current milestone which represents the current focus:
 Displays issues per sprint:
 
 - Layout: Table
-- Fields: Title, Sprint, Platform, Status, Linked pull requests, Labels
+- Fields: Title, Sprint, Milestone, Platform, Status, Linked pull requests, Labels
 - Group: Sprint
 - Field sum: Count
 - Sort: Sprint-desc
