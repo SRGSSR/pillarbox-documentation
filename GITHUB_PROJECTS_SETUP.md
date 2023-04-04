@@ -10,6 +10,7 @@ We currently use 3 settings:
   - **✏️ Draft**: Tasks which have not been sufficiently refined yet.
   - **📋 Backlog**: Tasks which are ready to be planned.
   - **🚧  In Progress**: Tasks currently being worked on.
+  - **🍿 Code Review**: Tasks currently being reviewed.
   - **🔍 Testing**: Tasks currently being tested.
   - **✅ Done**: Completed tasks.
 - **Sprint**: Duration of 1 week.
