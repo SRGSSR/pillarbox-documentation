@@ -11,7 +11,6 @@ We currently use 3 settings:
   - **📋 Backlog**: Tasks which are ready to be planned.
   - **🚧  In Progress**: Tasks currently being worked on.
   - **🍿 Code Review**: Tasks currently being reviewed.
-  - **🔍 Testing**: Tasks currently being tested.
   - **✅ Done**: Completed tasks.
 - **Sprint**: Duration of 1 week.
 - **Platform**:
@@ -54,17 +53,6 @@ Displays all issues to be refined per platform:
 - Field sum: Count
 - Sort: Manual
 - Filter: `status:"✏️ Draft"`
-
-### Testing
-
-Display issues to be tested per platform:
-
-- Layout: Table
-- Fields: Title, Linked pull requests
-- Group: Platform
-- Field sum: Count
-- Sort: Manual
-- Filter: `status:"🔍 Testing"`
 
 ### Product Backlog
 
