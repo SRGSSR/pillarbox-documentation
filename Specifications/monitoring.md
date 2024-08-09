@@ -215,7 +215,7 @@ The associated event data dictionary supports the following keys:
 Some remarks:
 
 - If the error occurs before playback has started (e.g. during metadata retrieval) then `player_position` must be omitted.
-- The `url` should describe as closely as possible the content that was affected, down to media playlists or segment URLs, provided this information is available.
+- The `url` should describe the content that was affected as closely as possible, down to media playlists or segment URLs, provided this information is available.
 - The `log` is informally defined and can range from raw information to stack traces if helpful.
 - For DVR streams the `player_position` must represent the distance from the live edge (0 for streams).
 
@@ -263,7 +263,7 @@ The associated event data dictionary supports the following keys:
 
 Some remarks:
 
-- The `url` should describe as closely as possible the content currently being played, down to media playlists or segment URLs, provided this information is available.
+- The `url` should describe the content currently being played as closely as possible, down to media playlists or segment URLs, provided this information is available.
 - The `playback_duration` must be measured in wall-clock time, independently of playback speed adjustments.
 - For DVR streams the `player_position` must represent the distance from the live edge (0 for streams).
 
