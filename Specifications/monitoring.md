@@ -143,7 +143,43 @@ The `qos_timings` JSON data dictionary supports the following keys:
 ### Example
 
 ```json
-TODO
+{
+    "event_name": "START",
+    "session_id": "0aef9cb4-5b0f-47eb-9926-a799abb9332f",
+    "timestamp": 1723201568902,
+    "version": "1.0.0",
+    "data": {
+        "device": {
+            "id": "8e9242a4-60b6-48f9-8dfb-6ee43e36c7eb",
+            "model": "iPad13,4",
+            "type": "Tablet"
+        },
+        "media": {
+            "asset_url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14773895\/5dc2e58b-6c38-385a-a674-259827b521e8\/master.m3u8",
+            "id": "urn:rts:video:14773895",
+            "metadata_url": "https:\/\/il.srgssr.ch\/integrationlayer\/2.1\/mediaComposition\/byUrn\/urn:rts:video:14773895?onlyChapters=true&vector=appplay",
+            "origin": "ch.srgssr.Pillarbox-demo.debug"
+        },
+        "os": {
+            "name": "iPadOS",
+            "version": "18.0"
+        },
+        "player": {
+            "name": "Pillarbox",
+            "platform": "Apple",
+            "version": "2.0.0-48-gbc5ff862"
+        },
+        "screen": {
+            "height": 2388,
+            "width": 1668
+        },
+        "time_metrics": {
+            "asset": 5077,
+            "media_source": 937,
+            "total": 6014
+        }
+    }
+}
 ```
 
 ## Error Event
@@ -180,7 +216,19 @@ Some remarks:
 ### Example
 
 ```json
-TODO
+{
+    "event_name": "ERROR",
+    "session_id": "0aef9cb4-5b0f-47eb-9926-a799abb9332f",
+    "timestamp": 1723201568953,
+    "version": "1.0.0",
+    "data": {
+        "message": "Segment exceeds specified bandwidth for variant",
+        "name": "CoreMediaErrorDomain(-12318)",
+        "player_position": 724,
+        "severity": "WARNING",
+        "url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14773895\/5dc2e58b-6c38-385a-a674-259827b521e8\/index-f3-v1.m3u8"
+    }
+}
 ```
 
 ## Status Events
@@ -223,3 +271,24 @@ The `stall` JSON data dictionary supports the following keys:
 | `duration` | The total duration of stalls | Duration in milliseconds | `9000` |
 
 The stall duration must be measured in wall-clock time, independently of playback speed adjustments.
+
+### Example
+
+```json
+{
+    "event_name": "HEARTBEAT",
+    "session_id": "0aef9cb4-5b0f-47eb-9926-a799abb9332f",
+    "timestamp": 1723201598922,
+    "version": "1.0.0",
+    "data": {
+        "bandwidth": 2514165,
+        "bitrate": 766208,
+        "buffered_duration": 79488,
+        "playback_duration": 30001,
+        "player_position": 30694,
+        "stall_count": 0,
+        "stall_duration": 0,
+        "url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14773895\/5dc2e58b-6c38-385a-a674-259827b521e8\/index-f5-v1.m3u8"
+    }
+}
+```
