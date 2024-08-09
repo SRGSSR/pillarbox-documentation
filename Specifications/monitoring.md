@@ -23,11 +23,11 @@ Associated information is provided in JSON payloads all having the same fixed to
 
 | Key | Description | Format | Examples |
 | - | - | - | - |
+| `data` | Data associated with the event | JSON Dictionary | `{ ... }` |
 | `event_name` | The name of the event | `START`, `STOP`, `ERROR`, `HEARTBEAT` | `STOP` |
 | `session_id` | A unique identifier for the session | String | `37b18444-76b6-4159-8539-d48ea5ecbc86` |
 | `timestamp` | The timestamp at the time the event is sent | Unix timestamp in milliseconds | `1717665997932` |
 | `version` | The version of the JSON format | [Semantic version](https://semver.org/) | `1.2.3` |
-| `data` | Data associated with the event | JSON Dictionary | `{ ... }` |
 
 > [!IMPORTANT]
 > All keys listed above are mandatory.
@@ -82,8 +82,8 @@ The `media` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
 | - | - | - | - |
-| `id` | A unique media identifier | String | `urn:rts:video:123456` |
 | `asset_url` | The URL of the content being played | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index.m3u8` |
+| `id` | A unique media identifier | String | `urn:rts:video:123456` |
 | `metadata_url` | The URL where media metadata was fetched | String | `https://il.srgssr.ch/integrationlayer/2.0/mediaComposition/byUrn/urn:rts:video:3608506` |
 | `origin` | A description of the context in which the media is played | String | `ch.srgssr.app`, `https://www.rts.ch/info/article/123` |
 
@@ -116,8 +116,8 @@ The `screen` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
 | - | - | - | - |
-| `width` | The screen width in pixels | Number | `3840` |
 | `height` | The screen height in pixels | Number | `2160` |
+| `width` | The screen width in pixels | Number | `3840` |
 
 ### Quality of Experience Timings
 
@@ -125,8 +125,8 @@ The `qoe_timings` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
 | - | - | - | - |
-| `metadata` | Time the user waited for metadata to be retrieved | Duration in milliseconds | `412` |
 | `asset` | Time the user waited for asset playback to start | Duration in milliseconds | `1145` |
+| `metadata` | Time the user waited for metadata to be retrieved | Duration in milliseconds | `412` |
 | `total` | Total time the user waited for playback to start | Duration in milliseconds | `1763` |
 
 > [!IMPORTANT]
@@ -138,9 +138,9 @@ The `qos_timings` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
 | - | - | - | - |
-| `metadata` | Time for metadata to be retrieved by the player | Duration in milliseconds | `412` |
 | `asset` | Time for the player to start playing the asset | Duration in milliseconds | `1145` |
 | `drm` | Time to load DRM content keys | Duration in milliseconds | `245` |
+| `metadata` | Time for metadata to be retrieved by the player | Duration in milliseconds | `412` |
 | `token` | Time to fetch an authorization token | Duration in milliseconds | `356` |
 
 > [!IMPORTANT]
@@ -202,12 +202,12 @@ The associated event data dictionary supports the following keys:
 
 | Key | Description | Format | Examples |
 | - | - | - | - |
-| `severity` | The error severity | `WARNING`, `FATAL` | `WARNING` |
-| `name` | The name of the error | String | `ERR-404` |
-| `message` | The message associated with the error (might be localized) | String | `Not found` |
-| `player_position` | The current player position | Duration in milliseconds | `16548` |
-| `url` | The URL that was affected by the error | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
 | `log` | Other information that might be helpful | String | `{ ... }` |
+| `message` | The message associated with the error (might be localized) | String | `Not found` |
+| `name` | The name of the error | String | `ERR-404` |
+| `player_position` | The current player position | Duration in milliseconds | `16548` |
+| `severity` | The error severity | `WARNING`, `FATAL` | `WARNING` |
+| `url` | The URL that was affected by the error | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
 
 > [!IMPORTANT]
 > Requirements for each key are not provided explicitly but implementations should fill as much information as possible.
@@ -250,13 +250,14 @@ The associated event data dictionary supports the following keys:
 
 | Key | Description | Format | Examples |
 | - | - | - | - |
-| `url` | The URL that is being played | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
-| `bitrate` | Bitrate of the content being played | Number in bytes per second | `1000000` |
 | `bandwidth` | Bandwidth | Number in bytes per second | `4000000` |
+| `bitrate` | Bitrate of the content being played | Number in bytes per second | `1000000` |
 | `buffered_duration` | Duration of the content currently available in buffer | Duration in milliseconds | `12000` |
-| `stall` | Stall information | JSON dictionary | `{ ... }` |
 | `playback_duration` | The duration of the playback session | Duration in milliseconds | `40000` |
 | `player_position` | The current player position | Duration in milliseconds | `16548` |
+
+| `stall` | Stall information | JSON dictionary | `{ ... }` |
+| `url` | The URL that is being played | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
 
 > [!IMPORTANT]
 > Requirements for each key are not provided explicitly but implementations should fill as much information as possible.
