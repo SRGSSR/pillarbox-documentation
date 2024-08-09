@@ -83,7 +83,7 @@ The `media` JSON data dictionary supports the following keys:
 
 Some remarks:
 
-- If a token was appended to the URL of the asset being played it should be stripped before being assigned to `asset_url`.
+- Any token appended **by the client** to the URL of the asset being played should not appear in `asset_url`.
 - The `origin` is flexible but should describe the context of playback, for example an application identifier or the URL of the web page hosting the media.
 
 ### Operating System
