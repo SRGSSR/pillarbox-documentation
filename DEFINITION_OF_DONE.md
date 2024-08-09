@@ -1,7 +1,6 @@
 # Definition of Done (DoD)
 
-This document is a collaborative effort among team members to establish clear criteria for completing tasks. 
-The DoD serves as a guide to ensure the quality and completeness of work within the team.
+This document is a collaborative effort among team members to establish clear criteria for completing tasks. The DoD serves as a guide to ensure the quality and completeness of work within the team.
 
 To meet our standards, every task should adhere to the following criteria:
 

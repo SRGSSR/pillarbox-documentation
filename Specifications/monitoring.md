@@ -6,7 +6,7 @@
 
 Pillarbox integrates with a monitoring platform that provides real-time and historical dashboards for:
 
-- Quality of Service (QoS): QoS refers to the performance level of a service, especially in terms of its transmission quality and service availability. 
+- Quality of Service (QoS): QoS refers to the performance level of a service, especially in terms of its transmission quality and service availability.
 - Quality of Experience (QoE): QoE is a user-centric measure that evaluates the overall experience of the user with a service.
 
 This article describes the flexible event model that allows our players to send data to our monitoring platform.
@@ -16,7 +16,7 @@ This article describes the flexible event model that allows our players to send 
 Events aggregate data related to specific points of interests in the lifetime of a playback session. All event JSON payloads have the same fixed top-level structure:
 
 | Key | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `event_name` | The name of the event | `START`, `STOP`, `ERROR`, `HEARTBEAT` | `STOP` |
 | `session_id` | A unique identifier for the session | String | `37b18444-76b6-4159-8539-d48ea5ecbc86` |
 | `timestamp` | The timestamp when the event is sent | Unix timestamp in milliseconds | `1717665997932` |
@@ -38,7 +38,7 @@ An event with the name `START` must be sent to signal the start of a playback se
 The associated event data dictionary supports the following keys:
 
 | Key | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `browser` | Browser information | JSON dictionary | `{ ... }` |
 | `device` | Device information | JSON dictionary | `{ ... }` |
 | `media` | Media information | JSON dictionary | `{ ... }` |
@@ -56,7 +56,7 @@ The associated event data dictionary supports the following keys:
 The `browser` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `name` | The browser name | String | `Firefox`, `Safari` |
 | `version` | The browser version | String | `129.0` |
 
@@ -65,7 +65,7 @@ The `browser` JSON data dictionary supports the following keys:
 The `device` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `id` | A unique anonymous identifier for the device | String | `105124c0-fa84-4028-908e-618f2402d46f` |
 | `model` | The device model | String | `iPhone15.7`, `Samsung Galaxy S24` |
 | `type` | The device type | `Car`, `Desktop`, `Headset`, `Phone`, `Tablet`, `TV` | `Phone` |
@@ -75,7 +75,7 @@ The `device` JSON data dictionary supports the following keys:
 The `media` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `id` | A unique media identifier | String | `urn:rts:video:123456` |
 | `asset_url` | The URL of the content being played | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index.m3u8` |
 | `metadata_url` | The URL where media metadata was fetched | String | `https://il.srgssr.ch/integrationlayer/2.0/mediaComposition/byUrn/urn:rts:video:3608506` |
@@ -91,7 +91,7 @@ Some remarks:
 The `os` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `name` | The operating system name | String | `macOS`, `Windows`, `Android` |
 | `version` | The operating system version | String | `14.5` |
 
@@ -100,7 +100,7 @@ The `os` JSON data dictionary supports the following keys:
 The `player` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `name` | The player name | String | `Pillarbox`, `Letterbox`, `video.js` |
 | `version` | The player version | String | `1.2.3` |
 
@@ -109,7 +109,7 @@ The `player` JSON data dictionary supports the following keys:
 The `screen` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `width` | The screen width in pixels | Number | `3840` |
 | `height` | The screen height in pixels | Number | `2160` |
 
@@ -118,7 +118,7 @@ The `screen` JSON data dictionary supports the following keys:
 The `qoe_timings` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `metadata` | Time the user waited for metadata to be retrieved | Duration in milliseconds | `412` |
 | `asset` | Time the user waited for asset playback to start | Duration in milliseconds | `1145` |
 | `total` | Total time the user waited for playback to start | Duration in milliseconds | `1763` |
@@ -131,7 +131,7 @@ The `qoe_timings` JSON data dictionary supports the following keys:
 The `qos_timings` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `metadata` | Time for metadata to be retrieved by the player | Duration in milliseconds | `412` |
 | `asset` | Time for the player to start playing the asset | Duration in milliseconds | `1145` |
 | `drm` | Time to load DRM content keys | Duration in milliseconds | `245` |
@@ -159,7 +159,7 @@ An event with the name `ERROR` must be sent when an error, either fatal or not, 
 The associated event data dictionary supports the following keys:
 
 | Key | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `severity` | The error severity | `WARNING`, `FATAL` | `WARNING` |
 | `name` | The name of the error | String | `ERR-404` |
 | `message` | The message associated with the error | String | `Not found` |
@@ -195,7 +195,7 @@ Other events can be sent during the playback session, conveying status informati
 The associated event data dictionary supports the following keys:
 
 | Key | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `url` | The URL that is being played | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
 | `bitrate` | Bitrate of the content being played | Number in bytes per second | `1000000` |
 | `bandwidth` | Bandwidth | Number in bytes per second | `4000000` |
@@ -218,7 +218,7 @@ Some remarks:
 The `stall` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
-| - | - | - | - | 
+| - | - | - | - |
 | `count` | The total number of stalls experienced during the session | Number | `4` |
 | `duration` | The total duration of stalls | Duration in milliseconds | `9000` |
 
