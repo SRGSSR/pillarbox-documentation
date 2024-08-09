@@ -162,7 +162,7 @@ The associated event data dictionary supports the following keys:
 | - | - | - | - |
 | `severity` | The error severity | `WARNING`, `FATAL` | `WARNING` |
 | `name` | The name of the error | String | `ERR-404` |
-| `message` | The message associated with the error | String | `Not found` |
+| `message` | The message associated with the error (might be localized) | String | `Not found` |
 | `player_position` | The current player position | Duration in milliseconds | `16548` |
 | `url` | The URL that was affected by the error | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
 | `log` | Other information that might be helpful | String | `{ ... }` |
