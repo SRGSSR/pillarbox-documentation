@@ -13,27 +13,33 @@ This article describes the flexible event model that allows our players to send 
 
 ## General Event Format
 
-Events aggregate data related to specific points of interests in the lifetime of a playback session. All event JSON payloads have the same fixed top-level structure:
+Events provide data related to specific points of interests in the lifetime of a playback session. Three kinds of event types are available:
+
+- `START`
+- `ERROR`
+- Status events (`STOP`, `HEARTBEAT`)
+
+Associated information is provided in JSON payloads all having the same fixed top-level structure containing the following keys:
 
 | Key | Description | Format | Examples |
 | - | - | - | - |
 | `event_name` | The name of the event | `START`, `STOP`, `ERROR`, `HEARTBEAT` | `STOP` |
 | `session_id` | A unique identifier for the session | String | `37b18444-76b6-4159-8539-d48ea5ecbc86` |
-| `timestamp` | The timestamp when the event is sent | Unix timestamp in milliseconds | `1717665997932` |
+| `timestamp` | The timestamp at the time the event is sent | Unix timestamp in milliseconds | `1717665997932` |
 | `version` | The version of the JSON format | [Semantic version](https://semver.org/) | `1.2.3` |
 | `data` | Data associated with the event | JSON Dictionary | `{ ... }` |
 
 > [!IMPORTANT]
 > All keys listed above are mandatory.
 
-Data associated with the event varies depending on the event itself and is discussed separately below.
+The following sections describe the `data` format associated with each event type in more detail.
 
-## Start Event
+## Start Event `data`
 
-An event with the name `START` must be sent to signal the start of a playback session. This event conveys important context information and is therefore required, no matter playback can successfully start or not:
+An event with the name `START` must be sent to signal the start of a playback session. This event conveys important context information and is therefore required, no matter playback successfully starts or not:
 
-- Playback successfully starts: The `START` event must be sent when the player is ready to play.
-- Playback fails at startup: The `START` event must be sent immediately before the `ERROR` event.
+- Success: The `START` event must be sent when the player is ready to play.
+- Failure: The `START` event must be sent immediately before an `ERROR` event describing the reason for the failure.
 
 The associated event data dictionary supports the following keys:
 
@@ -173,7 +179,7 @@ The `qos_timings` JSON data dictionary supports the following keys:
             "height": 2388,
             "width": 1668
         },
-        "time_metrics": {
+        "qoe_metrics": {
             "asset": 5077,
             "media_source": 937,
             "total": 6014
@@ -182,12 +188,12 @@ The `qos_timings` JSON data dictionary supports the following keys:
 }
 ```
 
-## Error Event
+## Error Event `data`
 
 An event with the name `ERROR` must be sent when an error, either fatal or not, has been encountered:
 
 - A fatal error makes playback fail without the possibility to recover, either when playback is started or during playback (e.g. following a network failure).
-- A non-fatal error (warning) informs about potential issues that occur in the background, e.g. bitrates that do not match what is advertised and that could lead to unexpected stalls.
+- A non-fatal error (warning) informs about potential issues that occur behind the scenes and might affect the playback experience negatively.
 
 > [!IMPORTANT]
 > A fatal `ERROR` at startup must always be preceded by a `START` event.
@@ -208,7 +214,7 @@ The associated event data dictionary supports the following keys:
 
 Some remarks:
 
-- If the error occurs after before playback has started (e.g. during metadata retrieval) then `player_position` must be omitted.
+- If the error occurs before playback has started (e.g. during metadata retrieval) then `player_position` must be omitted.
 - The `url` should describe as closely as possible the content that was affected, down to media playlists or segment URLs, provided this information is available.
 - The `log` is informally defined and can range from raw information to stack traces if helpful.
 - For DVR streams the `player_position` must represent the distance from the live edge (0 for streams).
@@ -231,9 +237,9 @@ Some remarks:
 }
 ```
 
-## Status Events
+## Status Events `data`
 
-Other events can be sent during the playback session, conveying status information about the quality of the experience.
+Other events must be sent during the playback session:
 
 | Event name | Description | Time at which the event is sent |
 | - | - | - |
