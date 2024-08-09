@@ -250,8 +250,8 @@ The associated event data dictionary supports the following keys:
 
 | Key | Description | Format | Examples |
 | - | - | - | - |
-| `bandwidth` | Bandwidth | Number in bytes per second | `4000000` |
-| `bitrate` | Bitrate of the content being played | Number in bytes per second | `1000000` |
+| `bandwidth` | Bandwidth | Number in bits per second | `4000000` |
+| `bitrate` | Bitrate of the content being played | Number in bits per second | `1000000` |
 | `buffered_duration` | Duration of the content currently available in buffer | Duration in milliseconds | `12000` |
 | `playback_duration` | The duration of the playback session | Duration in milliseconds | `40000` |
 | `player_position` | The current player position | Duration in milliseconds | `16548` |
