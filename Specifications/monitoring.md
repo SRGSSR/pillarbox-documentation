@@ -27,7 +27,7 @@ Associated information is provided in JSON payloads all having the same fixed to
 | `event_name` | The name of the event | `START`, `STOP`, `ERROR`, `HEARTBEAT` | `STOP` |
 | `session_id` | A unique identifier for the session | String | `37b18444-76b6-4159-8539-d48ea5ecbc86` |
 | `timestamp` | The timestamp at the time the event is sent | Unix timestamp in milliseconds | `1717665997932` |
-| `version` | The version of the JSON format | [Semantic version](https://semver.org/) | `1.2.3` |
+| `version` | The version of the JSON format | Number | 1 |
 
 > [!IMPORTANT]
 > All keys listed above are mandatory.
@@ -153,7 +153,7 @@ The `qos_timings` JSON data dictionary supports the following keys:
     "event_name": "START",
     "session_id": "0aef9cb4-5b0f-47eb-9926-a799abb9332f",
     "timestamp": 1723201568902,
-    "version": "1.0.0",
+    "version": 1,
     "data": {
         "device": {
             "id": "8e9242a4-60b6-48f9-8dfb-6ee43e36c7eb",
@@ -226,7 +226,7 @@ Some remarks:
     "event_name": "ERROR",
     "session_id": "0aef9cb4-5b0f-47eb-9926-a799abb9332f",
     "timestamp": 1723201568953,
-    "version": "1.0.0",
+    "version": 1,
     "data": {
         "message": "Segment exceeds specified bandwidth for variant",
         "name": "CoreMediaErrorDomain(-12318)",
@@ -289,7 +289,7 @@ The stall duration must be measured in wall-clock time, independently of playbac
     "event_name": "HEARTBEAT",
     "session_id": "0aef9cb4-5b0f-47eb-9926-a799abb9332f",
     "timestamp": 1723201598922,
-    "version": "1.0.0",
+    "version": 1,
     "data": {
         "bandwidth": 2514165,
         "bitrate": 766208,
