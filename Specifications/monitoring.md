@@ -86,7 +86,6 @@ The `media` JSON data dictionary supports the following keys:
 | `id` | A unique media identifier | String | `urn:rts:video:123456` |
 | `metadata_url` | The URL where media metadata was fetched | String | `https://il.srgssr.ch/integrationlayer/2.0/mediaComposition/byUrn/urn:rts:video:3608506` |
 | `origin` | A description of the context in which the media is played | String | `ch.srgssr.app`, `https://www.rts.ch/info/article/123` |
-| `type` | The media type | `on-demand`, `live` | `on-demand` |
 
 Some remarks:
 
@@ -165,8 +164,7 @@ The `qos_timings` JSON data dictionary supports the following keys:
             "asset_url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14773895\/5dc2e58b-6c38-385a-a674-259827b521e8\/master.m3u8",
             "id": "urn:rts:video:14773895",
             "metadata_url": "https:\/\/il.srgssr.ch\/integrationlayer\/2.1\/mediaComposition\/byUrn\/urn:rts:video:14773895?onlyChapters=true&vector=appplay",
-            "origin": "ch.srgssr.Pillarbox-demo.debug",
-            "type": "on-demand"
+            "origin": "ch.srgssr.Pillarbox-demo.debug"
         },
         "os": {
             "name": "iPadOS",
