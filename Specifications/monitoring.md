@@ -293,8 +293,10 @@ The stall duration must be measured in wall-clock time, independently of playbac
         "buffered_duration": 79488,
         "playback_duration": 30001,
         "player_position": 30694,
-        "stall_count": 0,
-        "stall_duration": 0,
+        "stall": {
+            "count": 3,
+            "duration": 7154
+        },
         "url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14773895\/5dc2e58b-6c38-385a-a674-259827b521e8\/index-f5-v1.m3u8"
     }
 }
