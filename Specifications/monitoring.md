@@ -202,7 +202,7 @@ The associated event data dictionary supports the following keys:
 
 | Key | Description | Format | Examples |
 | - | - | - | - |
-| `log` | Other information that might be helpful | String | `{ ... }` |
+| `log` | Other information that might be helpful | Any | `{ ... }` |
 | `message` | The message associated with the error (might be localized) | String | `Not found` |
 | `name` | The name of the error | String | `ERR-404` |
 | `player_position` | The current player position | Duration in milliseconds | `16548` |
