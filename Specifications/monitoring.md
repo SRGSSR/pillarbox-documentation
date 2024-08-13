@@ -279,6 +279,9 @@ The `stall` JSON data dictionary supports the following keys:
 
 The stall duration must be measured in wall-clock time, independently of playback speed adjustments.
 
+> [!IMPORTANT]
+> If a player is able to provide stall information, both `count` and `duration` must be supplied, even if zero.
+
 ### Example
 
 ```json
