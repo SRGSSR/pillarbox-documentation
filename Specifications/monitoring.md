@@ -202,7 +202,7 @@ The associated event data dictionary supports the following keys:
 
 | Key | Description | Format | Examples |
 | - | - | - | - |
-| `log` | Any additional information that might be helpful | Any | `{ ... }` |
+| `log` | Any additional information that might be helpful | Any | `{ ... }`, `[...]`, `Stack trace symbols: ...` |
 | `message` | The message associated with the error (might be localized) | String | `Not found` |
 | `name` | The name of the error | String | `ERR-404` |
 | `player_position` | The current player position, relative to the beginning of the playlist. Negative values are admitted | Duration in milliseconds | `16548` |
@@ -216,7 +216,7 @@ The associated event data dictionary supports the following keys:
 
 Some remarks:
 
-- If the error occurs before playback has started (e.g. during metadata retrieval) then `player_position` must be omitted.
+- If the error occurs before playback has started (e.g. during metadata retrieval) then `player_position`, `player_timestamp` and `duration` must be omitted.
 - The `url` should describe the content that was affected as closely as possible, down to media playlists or segment URLs, provided this information is available.
 - The `log` is informally defined so that any useful information can be added for investigation purposes.
 
