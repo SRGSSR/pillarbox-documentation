@@ -1,6 +1,6 @@
 # Monitoring
 
-- Version: 1.0.0
+- Version: 1
 
 ## Introduction
 
@@ -25,8 +25,8 @@ Associated information is provided in JSON payloads all having the same fixed to
 | - | - | - | - |
 | `data` | Data associated with the event | JSON Dictionary | `{ ... }` |
 | `event_name` | The name of the event | `START`, `STOP`, `ERROR`, `HEARTBEAT` | `STOP` |
-| `session_id` | A unique identifier for the session | String | `37b18444-76b6-4159-8539-d48ea5ecbc86` |
-| `timestamp` | The timestamp at the time the event is sent | Unix timestamp in milliseconds | `1717665997932` |
+| `session_id` | A unique identifier for the session | [UUID](https://www.itu.int/en/ITU-T/asn1/Pages/UUID/uuids.aspx) | `37b18444-76b6-4159-8539-d48ea5ecbc86` |
+| `timestamp` | The timestamp at the time the event is sent | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932` |
 | `version` | The version of the JSON format | Number | 1 |
 
 > [!IMPORTANT]
@@ -36,7 +36,7 @@ The following sections describe the `data` format associated with each event typ
 
 ## Start Event `data`
 
-An event with the name `START` must be sent to signal the start of a playback session. This event conveys important context information and is therefore required, no matter playback successfully starts or not:
+An event with the name `START` must be sent to signal the start of a playback session. This event conveys important static context information and is therefore required, no matter playback successfully starts or not:
 
 - Success: The `START` event must be sent when the player is ready to play.
 - Failure: The `START` event must be sent immediately before an `ERROR` event describing the reason for the failure.
@@ -55,7 +55,7 @@ The associated event data dictionary supports the following keys:
 | `qos_timings` | QoS timings | JSON dictionary | `{ ... }` |
 
 > [!IMPORTANT]
-> Requirements for each key are not provided explicitly but implementations should fill as much information as possible.
+> Requirements for each key are not provided explicitly but implementations should fill as much information as possible. If some information cannot be reliably determined it should be omitted.
 
 ### Browser
 
@@ -202,22 +202,23 @@ The associated event data dictionary supports the following keys:
 
 | Key | Description | Format | Examples |
 | - | - | - | - |
-| `log` | Other information that might be helpful | Any | `{ ... }` |
+| `log` | Any additional information that might be helpful | Any | `{ ... }` |
 | `message` | The message associated with the error (might be localized) | String | `Not found` |
 | `name` | The name of the error | String | `ERR-404` |
-| `player_position` | The current player position | Duration in milliseconds (on-demand) or Unix timestamp in milliseconds (live) | `16548`, `1717665997932` |
+| `player_position` | The current player position, relative to the beginning of the playlist. Negative values are admitted | Duration in milliseconds | `16548` |
+| `player_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932` |
+| `duration` | The content duration, as retrieved from the playlist | Offset from the beginning of the content, in milliseconds | `16548` |
 | `severity` | The error severity | `WARNING`, `FATAL` | `WARNING` |
 | `url` | The URL that was affected by the error | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
 
 > [!IMPORTANT]
-> Requirements for each key are not provided explicitly but implementations should fill as much information as possible.
+> Requirements for each key are not provided explicitly but implementations should fill as much information as possible. If some information cannot be reliably determined it should be omitted.
 
 Some remarks:
 
 - If the error occurs before playback has started (e.g. during metadata retrieval) then `player_position` must be omitted.
 - The `url` should describe the content that was affected as closely as possible, down to media playlists or segment URLs, provided this information is available.
-- The `log` is informally defined and can range from raw information to stack traces if helpful.
-- For DVR streams the `player_position` must represent the distance from the live edge (0 for streams).
+- The `log` is informally defined so that any useful information can be added for investigation purposes.
 
 ### Example
 
@@ -237,36 +238,37 @@ Some remarks:
 }
 ```
 
-## Status Events `data`
+## Status Event `data`
 
 Other events must be sent during the playback session:
 
 | Event name | Description | Time at which the event is sent |
 | - | - | - |
 | `STOP` | Playback ended | When playback ends normally or is interrupted |
-| `HEARTBEAT` | Informs that the session is still alive | Every 30 seconds (also when paused) |
+| `HEARTBEAT` | Informs that the session is still alive | Every 30 seconds (also when paused). First heartbeat sent right after `START` |
 
 The associated event data dictionary supports the following keys:
 
 | Key | Description | Format | Examples |
 | - | - | - | - |
+| `airplay` | A value indicating whether AirPlay is currently active | Boolean | `true` |
 | `bandwidth` | Bandwidth | Number in bits per second | `4000000` |
 | `bitrate` | Bitrate of the content being played | Number in bits per second | `1000000` |
 | `buffered_duration` | Duration of the content currently available in buffer | Duration in milliseconds | `12000` |
 | `playback_duration` | The duration of the playback session | Duration in milliseconds | `40000` |
 | `player_position` | The current player position | Duration in milliseconds | `16548` |
-
 | `stall` | Stall information | JSON dictionary | `{ ... }` |
+| `stream_type` | Stream type | `on-demand`, `live` | `on-demand` |
 | `url` | The URL that is being played | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
+| `vpn` | A value indicating whether a VPN is enabled on the device | Boolean | `true` |
 
 > [!IMPORTANT]
-> Requirements for each key are not provided explicitly but implementations should fill as much information as possible.
+> Requirements for each key are not provided explicitly but implementations should fill as much information as possible. If some information cannot be reliably determined it should be omitted.
 
 Some remarks:
 
 - The `url` should describe the content currently being played as closely as possible, down to media playlists or segment URLs, provided this information is available.
 - The `playback_duration` must be measured in wall-clock time, independently of playback speed adjustments.
-- For DVR streams the `player_position` must represent the distance from the live edge (0 for streams).
 
 ### Stall
 
