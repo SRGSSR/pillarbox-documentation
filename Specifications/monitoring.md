@@ -217,7 +217,7 @@ The associated event data dictionary supports the following keys:
 
 Some remarks:
 
-- If the error occurs before playback has started (e.g. during metadata retrieval) then `player_position`, `player_timestamp` and `duration` must be omitted.
+- If the error occurs before playback has started (e.g. during metadata retrieval) then `position`, `player_timestamp` and `duration` must be omitted.
 - The `url` should describe the content that was affected as closely as possible, down to media playlists or segment URLs, provided this information is available.
 - The `log` is informally defined so that any useful information can be added for investigation purposes.
 
