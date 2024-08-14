@@ -32,7 +32,7 @@ Associated information is provided in JSON payloads all having the same fixed to
 > [!IMPORTANT]
 > All keys listed above are mandatory.
 
-The following sections describe the `data` format associated with each event type in more detail.
+All events associated with the same session must be assigned the same `session_id`. The `data` format associated with each event type is described in in more detail below.
 
 ## Start Event `data`
 
@@ -108,6 +108,7 @@ The `player` JSON data dictionary supports the following keys:
 | Field | Description | Format | Examples |
 | - | - | - | - |
 | `name` | The player name | String | `Pillarbox`, `Letterbox`, `video.js` |
+| `platform` | The player platform | `Android`, `Apple`, `Web` | `1.2.3` |
 | `version` | The player version | String | `1.2.3` |
 
 ### Screen
@@ -150,41 +151,41 @@ The `qos_timings` JSON data dictionary supports the following keys:
 
 ```json
 {
-    "event_name": "START",
-    "session_id": "0aef9cb4-5b0f-47eb-9926-a799abb9332f",
-    "timestamp": 1723201568902,
-    "version": 1,
-    "data": {
-        "device": {
-            "id": "8e9242a4-60b6-48f9-8dfb-6ee43e36c7eb",
-            "model": "iPad13,4",
-            "type": "Tablet"
-        },
-        "media": {
-            "asset_url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14773895\/5dc2e58b-6c38-385a-a674-259827b521e8\/master.m3u8",
-            "id": "urn:rts:video:14773895",
-            "metadata_url": "https:\/\/il.srgssr.ch\/integrationlayer\/2.1\/mediaComposition\/byUrn\/urn:rts:video:14773895?onlyChapters=true&vector=appplay",
-            "origin": "ch.srgssr.Pillarbox-demo.debug"
-        },
-        "os": {
-            "name": "iPadOS",
-            "version": "18.0"
-        },
-        "player": {
-            "name": "Pillarbox",
-            "platform": "Apple",
-            "version": "2.0.0-48-gbc5ff862"
-        },
-        "screen": {
-            "height": 2388,
-            "width": 1668
-        },
-        "qoe_metrics": {
-            "asset": 5077,
-            "media_source": 937,
-            "total": 6014
-        }
-    }
+	"data": {
+		"device": {
+			"id": "8e9242a4-60b6-48f9-8dfb-6ee43e36c7eb",
+			"model": "iPad13,4",
+			"type": "Tablet"
+		},
+		"media": {
+			"asset_url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14895342\/85891228-1e53-371b-997a-094380f533e2\/master.m3u8",
+			"id": "urn:rts:video:14895342",
+			"metadata_url": "https:\/\/il.srgssr.ch\/integrationlayer\/2.1\/mediaComposition\/byUrn\/urn:rts:video:14895342?onlyChapters=true&vector=appplay",
+			"origin": "ch.srgssr.Pillarbox-demo"
+		},
+		"os": {
+			"name": "iPadOS",
+			"version": "18.0"
+		},
+		"player": {
+			"name": "Pillarbox",
+			"platform": "Apple",
+			"version": "2.0.0-49"
+		},
+		"qoe_metrics": {
+			"asset": 1164,
+			"media_source": 320,
+			"total": 1484
+		},
+		"screen": {
+			"height": 2388,
+			"width": 1668
+		}
+	},
+	"event_name": "START",
+	"session_id": "ebdb3da7-bc77-454e-9de0-a1dfa8091e84",
+	"timestamp": 1723640597805,
+	"version": 1
 }
 ```
 
@@ -224,17 +225,17 @@ Some remarks:
 
 ```json
 {
-    "event_name": "ERROR",
-    "session_id": "0aef9cb4-5b0f-47eb-9926-a799abb9332f",
-    "timestamp": 1723201568953,
-    "version": 1,
-    "data": {
-        "message": "Segment exceeds specified bandwidth for variant",
-        "name": "CoreMediaErrorDomain(-12318)",
-        "player_position": 724,
-        "severity": "WARNING",
-        "url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14773895\/5dc2e58b-6c38-385a-a674-259827b521e8\/index-f3-v1.m3u8"
-    }
+	"data": {
+		"message": "Segment exceeds specified bandwidth for variant",
+		"name": "CoreMediaErrorDomain(-12318)",
+		"position": 1024,
+		"severity": "WARNING",
+		"url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14895342\/85891228-1e53-371b-997a-094380f533e2\/index-f4-v1.m3u8"
+	},
+	"event_name": "ERROR",
+	"session_id": "ebdb3da7-bc77-454e-9de0-a1dfa8091e84",
+	"timestamp": 1723640598877,
+	"version": 1
 }
 ```
 
@@ -289,21 +290,25 @@ The stall duration must be measured in wall-clock time, independently of playbac
 
 ```json
 {
-    "event_name": "HEARTBEAT",
-    "session_id": "0aef9cb4-5b0f-47eb-9926-a799abb9332f",
-    "timestamp": 1723201598922,
-    "version": 1,
-    "data": {
-        "bandwidth": 2514165,
-        "bitrate": 766208,
-        "buffered_duration": 79488,
-        "playback_duration": 30001,
-        "player_position": 30694,
-        "stall": {
-            "count": 3,
-            "duration": 7154
-        },
-        "url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14773895\/5dc2e58b-6c38-385a-a674-259827b521e8\/index-f5-v1.m3u8"
-    }
+	"data": {
+		"airplay": false,
+		"bandwidth": 23285774,
+		"bitrate": 6129146,
+		"buffered_duration": 36000,
+		"duration": 2386040,
+		"playback_duration": 10663,
+		"position": 10618,
+		"stall": {
+			"count": 0,
+			"duration": 0
+		},
+		"stream_type": "on-demand",
+		"url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14895342\/85891228-1e53-371b-997a-094380f533e2\/index-f5-v1.m3u8",
+		"vpn": false
+	},
+	"event_name": "STOP",
+	"session_id": "ebdb3da7-bc77-454e-9de0-a1dfa8091e84",
+	"timestamp": 1723640608474,
+	"version": 1
 }
 ```
