@@ -111,15 +111,6 @@ The `player` JSON data dictionary supports the following keys:
 | `platform` | The player platform | `Android`, `Apple`, `Web` | `1.2.3` |
 | `version` | The player version | String | `1.2.3` |
 
-### Screen
-
-The `screen` JSON data dictionary supports the following keys:
-
-| Field | Description | Format | Examples |
-| - | - | - | - |
-| `height` | The screen height in pixels | Number | `2160` |
-| `width` | The screen width in pixels | Number | `3840` |
-
 ### Quality of Experience Timings
 
 The `qoe_timings` JSON data dictionary supports the following keys:
@@ -146,6 +137,15 @@ The `qos_timings` JSON data dictionary supports the following keys:
 
 > [!IMPORTANT]
 > QoS timings measure actual system performance. They should reflect the time technically required to fetch content, whether content preloading could take place or not.
+
+### Screen
+
+The `screen` JSON data dictionary supports the following keys:
+
+| Field | Description | Format | Examples |
+| - | - | - | - |
+| `height` | The screen height in pixels | Number | `2160` |
+| `width` | The screen width in pixels | Number | `3840` |
 
 ### Example
 
