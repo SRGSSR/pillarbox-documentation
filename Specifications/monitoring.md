@@ -272,6 +272,7 @@ Some remarks:
 
 - The `url` should describe the content currently being played as closely as possible, down to media playlists or segment URLs, provided this information is available.
 - The `playback_duration` must be measured in wall-clock time, independently of playback speed adjustments.
+- The `stream_type` is present in status events only, as those can more closely match potential stream type changes when a live playlist is closed and turns into an on-demand one.
 
 ### Stall
 
