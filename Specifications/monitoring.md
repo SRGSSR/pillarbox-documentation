@@ -117,9 +117,9 @@ The `qoe_timings` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
 | - | - | - | - |
-| `asset` | Time the user waited for asset playback to start | Duration in milliseconds | `1145` |
-| `metadata` | Time the user waited for metadata to be retrieved | Duration in milliseconds | `412` |
-| `total` | Total time the user waited for playback to start | Duration in milliseconds | `1763` |
+| `asset` | Time the user waited for asset playback to start | Time in milliseconds | `1145` |
+| `metadata` | Time the user waited for metadata to be retrieved | Time in milliseconds | `412` |
+| `total` | Total time the user waited for playback to start | Time in milliseconds | `1763` |
 
 > [!IMPORTANT]
 > QoE timings measure the perceived user experience. If content preloading in a playlist makes it possible to start instantaneously (or almost), these values should be zero or close to zero.
@@ -130,10 +130,10 @@ The `qos_timings` JSON data dictionary supports the following keys:
 
 | Field | Description | Format | Examples |
 | - | - | - | - |
-| `asset` | Time for the player to start playing the asset | Duration in milliseconds | `1145` |
-| `drm` | Time to load DRM content keys | Duration in milliseconds | `245` |
-| `metadata` | Time for metadata to be retrieved by the player | Duration in milliseconds | `412` |
-| `token` | Time to fetch an authorization token | Duration in milliseconds | `356` |
+| `asset` | Time for the player to start playing the asset | Time in milliseconds | `1145` |
+| `drm` | Time to load DRM content keys | Time in milliseconds | `245` |
+| `metadata` | Time for metadata to be retrieved by the player | Time in milliseconds | `412` |
+| `token` | Time to fetch an authorization token | Time in milliseconds | `356` |
 
 > [!IMPORTANT]
 > QoS timings measure actual system performance. They should reflect the time technically required to fetch content, whether content preloading could take place or not.
@@ -174,7 +174,7 @@ The `screen` JSON data dictionary supports the following keys:
         },
         "qoe_metrics": {
             "asset": 1164,
-            "media_source": 320,
+            "metadata": 320,
             "total": 1484
         },
         "screen": {
@@ -203,11 +203,11 @@ The associated event data dictionary supports the following keys:
 
 | Key | Description | Format | Examples |
 | - | - | - | - |
-| `duration` | The content duration, as retrieved from the playlist | Offset from the beginning of the content, in milliseconds | `16548` |
+| `duration` | The content duration, as retrieved from the playlist | Time in milliseconds | `16548` |
 | `log` | Any additional information that might be helpful | Any | `{ ... }`, `[...]`, `Stack trace symbols: ...` |
 | `message` | The message associated with the error (might be localized) | String | `Not found` |
 | `name` | The name of the error | String | `ERR-404` |
-| `position` | The current player position, relative to the beginning of the playlist. Negative values are admitted | Duration in milliseconds | `16548` |
+| `position` | The current player position, relative to the beginning of the playlist. Negative values are admitted | Time in milliseconds | `16548` |
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932` |
 | `severity` | The error severity | `WARNING`, `FATAL` | `WARNING` |
 | `url` | The URL that was affected by the error | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
@@ -255,9 +255,10 @@ The associated event data dictionary supports the following keys:
 | `airplay` | A value indicating whether AirPlay is currently active | Boolean | `true` |
 | `bandwidth` | Bandwidth | Number in bits per second | `4000000` |
 | `bitrate` | Bitrate of the content being played | Number in bits per second | `1000000` |
-| `buffered_duration` | Duration of the content currently available in buffer | Duration in milliseconds | `12000` |
-| `playback_duration` | The duration of the playback session | Duration in milliseconds | `40000` |
-| `position` | The current player position, relative to the beginning of the playlist. Negative values are admitted | Duration in milliseconds | `16548` |
+| `buffered_duration` | Duration of the content currently available in buffer | Time in milliseconds | `12000` |
+| `duration` | The content duration, as retrieved from the playlist | Time in milliseconds | `16548` |
+| `playback_duration` | The duration of the playback session | Time in milliseconds | `40000` |
+| `position` | The current player position, relative to the beginning of the playlist. Negative values are admitted | Time in milliseconds | `16548` |
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932` |
 | `stall` | Stall information | JSON dictionary | `{ ... }` |
 | `stream_type` | Stream type | `on-demand`, `live` | `on-demand` |
@@ -279,7 +280,7 @@ The `stall` JSON data dictionary supports the following keys:
 | Field | Description | Format | Examples |
 | - | - | - | - |
 | `count` | The total number of stalls experienced during the session | Number | `4` |
-| `duration` | The total duration of stalls | Duration in milliseconds | `9000` |
+| `duration` | The total duration of stalls | Time in milliseconds | `9000` |
 
 The stall duration must be measured in wall-clock time, independently of playback speed adjustments.
 
