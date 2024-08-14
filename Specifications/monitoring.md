@@ -202,12 +202,12 @@ The associated event data dictionary supports the following keys:
 
 | Key | Description | Format | Examples |
 | - | - | - | - |
+| `duration` | The content duration, as retrieved from the playlist | Offset from the beginning of the content, in milliseconds | `16548` |
 | `log` | Any additional information that might be helpful | Any | `{ ... }`, `[...]`, `Stack trace symbols: ...` |
 | `message` | The message associated with the error (might be localized) | String | `Not found` |
 | `name` | The name of the error | String | `ERR-404` |
-| `player_position` | The current player position, relative to the beginning of the playlist. Negative values are admitted | Duration in milliseconds | `16548` |
-| `player_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932` |
-| `duration` | The content duration, as retrieved from the playlist | Offset from the beginning of the content, in milliseconds | `16548` |
+| `position` | The current player position, relative to the beginning of the playlist. Negative values are admitted | Duration in milliseconds | `16548` |
+| `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932` |
 | `severity` | The error severity | `WARNING`, `FATAL` | `WARNING` |
 | `url` | The URL that was affected by the error | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
 
@@ -256,7 +256,8 @@ The associated event data dictionary supports the following keys:
 | `bitrate` | Bitrate of the content being played | Number in bits per second | `1000000` |
 | `buffered_duration` | Duration of the content currently available in buffer | Duration in milliseconds | `12000` |
 | `playback_duration` | The duration of the playback session | Duration in milliseconds | `40000` |
-| `player_position` | The current player position | Duration in milliseconds | `16548` |
+| `position` | The current player position, relative to the beginning of the playlist. Negative values are admitted | Duration in milliseconds | `16548` |
+| `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932` |
 | `stall` | Stall information | JSON dictionary | `{ ... }` |
 | `stream_type` | Stream type | `on-demand`, `live` | `on-demand` |
 | `url` | The URL that is being played | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
