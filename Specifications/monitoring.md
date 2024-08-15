@@ -197,7 +197,7 @@ An event with the name `ERROR` must be sent when an error, either fatal or not, 
 - A non-fatal error (warning) informs about potential issues that occur behind the scenes and might affect the playback experience negatively.
 
 > [!IMPORTANT]
-> A fatal `ERROR` at startup must always be preceded by a `START` event.
+> A fatal `ERROR` at startup must always be preceded by a `START` event. If playback is restarted after a fatal `ERROR` a new session must be created, beginning with a new `START` event.
 
 The associated event data dictionary supports the following keys:
 
@@ -261,7 +261,7 @@ The associated event data dictionary supports the following keys:
 | `position` | The current player position, relative to the beginning of the playlist. Negative values are admitted | Time in milliseconds | `16548` |
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932` |
 | `stall` | Stall information | JSON dictionary | `{ ... }` |
-| `stream_type` | Stream type | `on-demand`, `live` | `on-demand` |
+| `stream_type` | Stream type | `On-demand`, `Live` | `On-demand` |
 | `url` | The URL that is being played | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
 | `vpn` | A value indicating whether a VPN is enabled on the device | Boolean | `true` |
 
