@@ -32,14 +32,14 @@ Associated information is provided in JSON payloads all having the same fixed to
 > [!IMPORTANT]
 > All keys listed above are mandatory.
 
-All events associated with the same session must be assigned the same `session_id`. The `data` format associated with each event type is described in more detail below.
+All events associated with the same session **MUST** be assigned the same `session_id`. The `data` format associated with each event type is described in more detail below.
 
 ## Start Event `data`
 
-An event with the name `START` must be sent to signal the start of a playback session. This event conveys important static context information and is therefore required, no matter playback successfully starts or not:
+An event with the name `START` **MUST** be sent to signal the start of a playback session. This event conveys important static context information and is therefore required, no matter playback successfully starts or not:
 
-- Success: The `START` event must be sent when the player is ready to play.
-- Failure: The `START` event must be sent immediately before an `ERROR` event describing the reason for the failure.
+- Success: The `START` event **MUST** be sent when the player is ready to play.
+- Failure: The `START` event **MUST** be sent immediately before an `ERROR` event describing the reason for the failure.
 
 The associated event data dictionary supports the following keys:
 
@@ -55,7 +55,7 @@ The associated event data dictionary supports the following keys:
 | `qos_timings` | QoS timings | JSON dictionary | `{ ... }` |
 
 > [!IMPORTANT]
-> Requirements for each key are not provided explicitly but implementations should fill as much information as possible. If some information cannot be reliably determined it should be omitted.
+> Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as possible. If some information cannot be reliably determined it **SHOULD** be omitted.
 
 ### Browser
 
@@ -89,8 +89,8 @@ The `media` JSON data dictionary supports the following keys:
 
 Some remarks:
 
-- Any token appended **by the client** to the URL of the asset being played should not appear in `asset_url`.
-- The `origin` is flexible but should describe the context of playback, for example an application identifier or the URL of the web page hosting the media.
+- Any token appended **by the client** to the URL of the asset being played **SHOULD NOT** appear in `asset_url`.
+- The `origin` is flexible but **SHOULD** describe the context of playback, for example an application identifier or the URL of the web page hosting the media.
 
 ### Operating System
 
@@ -122,7 +122,7 @@ The `qoe_timings` JSON data dictionary supports the following keys:
 | `total` | Total time the user waited for playback to start | Time in milliseconds | `1763` |
 
 > [!IMPORTANT]
-> QoE timings measure the perceived user experience. If content preloading in a playlist makes it possible to start instantaneously (or almost), these values should be zero or close to zero.
+> QoE timings measure the perceived user experience. If content preloading in a playlist makes it possible to start instantaneously (or almost), these values **SHOULD** be zero or close to zero.
 
 ### Quality of Service Timings
 
@@ -136,7 +136,7 @@ The `qos_timings` JSON data dictionary supports the following keys:
 | `token` | Time to fetch an authorization token | Time in milliseconds | `356` |
 
 > [!IMPORTANT]
-> QoS timings measure actual system performance. They should reflect the time technically required to fetch content, whether content preloading could take place or not.
+> QoS timings measure actual system performance. They **SHOULD** reflect the time technically required to fetch content, whether content preloading could take place or not.
 
 ### Screen
 
@@ -191,13 +191,13 @@ The `screen` JSON data dictionary supports the following keys:
 
 ## Error Event `data`
 
-An event with the name `ERROR` must be sent when an error, either fatal or not, has been encountered:
+An event with the name `ERROR` **MUST** be sent when an error, either fatal or not, has been encountered:
 
 - A fatal error makes playback fail without the possibility to recover, either when playback is started or during playback (e.g. following a network failure).
 - A non-fatal error (warning) informs about potential issues that occur behind the scenes and might affect the playback experience negatively.
 
 > [!IMPORTANT]
-> A fatal `ERROR` at startup must always be preceded by a `START` event. If playback is restarted after a fatal `ERROR` a new session must be created, beginning with a new `START` event.
+> A fatal `ERROR` at startup **MUST** always be preceded by a `START` event. If playback is restarted after a fatal `ERROR` a new session **MUST** be created, beginning with a new `START` event.
 
 The associated event data dictionary supports the following keys:
 
@@ -213,12 +213,12 @@ The associated event data dictionary supports the following keys:
 | `url` | The URL that was affected by the error | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
 
 > [!IMPORTANT]
-> Requirements for each key are not provided explicitly but implementations should fill as much information as possible. If some information cannot be reliably determined it should be omitted.
+> Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as possible. If some information cannot be reliably determined it **SHOULD** be omitted.
 
 Some remarks:
 
-- If the error occurs before playback has started (e.g. during metadata retrieval) then `position`, `player_timestamp` and `duration` must be omitted.
-- The `url` should describe the content that was affected as closely as possible, down to media playlists or segment URLs, provided this information is available.
+- If the error occurs before playback has started (e.g. during metadata retrieval) then `position`, `player_timestamp` and `duration` **MUST** be omitted.
+- The `url` **SHOULD** describe the content that was affected as closely as possible, down to media playlists or segment URLs, provided this information is available.
 - The `log` is informally defined so that any useful information can be added for investigation purposes.
 
 ### Example
@@ -241,7 +241,7 @@ Some remarks:
 
 ## Status Event `data`
 
-Other events must be sent during the playback session:
+Other events **MUST** be sent during the playback session:
 
 | Event name | Description | Time at which the event is sent |
 | - | - | - |
@@ -266,12 +266,12 @@ The associated event data dictionary supports the following keys:
 | `vpn` | A value indicating whether a VPN is enabled on the device | Boolean | `true` |
 
 > [!IMPORTANT]
-> Requirements for each key are not provided explicitly but implementations should fill as much information as possible. If some information cannot be reliably determined it should be omitted.
+> Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as possible. If some information cannot be reliably determined it **SHOULD** be omitted.
 
 Some remarks:
 
-- The `url` should describe the content currently being played as closely as possible, down to media playlists or segment URLs, provided this information is available.
-- The `playback_duration` must be measured in wall-clock time, independently of playback speed adjustments.
+- The `url` **SHOULD** describe the content currently being played as closely as possible, down to media playlists or segment URLs, provided this information is available.
+- The `playback_duration` **MUST** be measured in wall-clock time, independently of playback speed adjustments.
 - The `stream_type` is present in status events only, as those can more closely match potential stream type changes when a live playlist is closed and turns into an on-demand one.
 
 ### Stall
@@ -283,10 +283,10 @@ The `stall` JSON data dictionary supports the following keys:
 | `count` | The total number of stalls experienced during the session | Number | `4` |
 | `duration` | The total duration of stalls | Time in milliseconds | `9000` |
 
-The stall duration must be measured in wall-clock time, independently of playback speed adjustments.
+The stall duration **MUST** be measured in wall-clock time, independently of playback speed adjustments.
 
 > [!IMPORTANT]
-> If a player is able to provide stall information, both `count` and `duration` must be supplied, even if zero.
+> If a player is able to provide stall information, both `count` and `duration` **MUST** be supplied, even if zero.
 
 ### Example
 
