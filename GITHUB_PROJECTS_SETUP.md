@@ -86,4 +86,3 @@ Displays issues per sprint:
 - Field sum: Count
 - Sort: Sprint-desc
 - Filter: `-no:sprint`
-
