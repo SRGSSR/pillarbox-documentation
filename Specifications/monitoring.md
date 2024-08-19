@@ -23,7 +23,7 @@ Associated information is provided in JSON payloads all having the same fixed to
 
 | Key | Description | Format | Examples |
 | - | - | - | - |
-| `data` | Data associated with the event | JSON Dictionary | `{ ... }` |
+| `data` | Data associated with the event | JSON dictionary | `{ ... }` |
 | `event_name` | The name of the event | `START`, `STOP`, `ERROR`, `HEARTBEAT` | `STOP` |
 | `session_id` | A unique identifier for the session | [UUID](https://www.itu.int/en/ITU-T/asn1/Pages/UUID/uuids.aspx) | `37b18444-76b6-4159-8539-d48ea5ecbc86` |
 | `timestamp` | The timestamp at the time the event is sent | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932` |
@@ -32,7 +32,7 @@ Associated information is provided in JSON payloads all having the same fixed to
 > [!IMPORTANT]
 > All keys listed above are mandatory.
 
-All events associated with the same session must be assigned the same `session_id`. The `data` format associated with each event type is described in in more detail below.
+All events associated with the same session must be assigned the same `session_id`. The `data` format associated with each event type is described in more detail below.
 
 ## Start Event `data`
 
