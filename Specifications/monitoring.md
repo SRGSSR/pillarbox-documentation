@@ -158,9 +158,9 @@ The `screen` JSON data dictionary supports the following keys:
             "type": "Tablet"
         },
         "media": {
-            "asset_url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14895342\/85891228-1e53-371b-997a-094380f533e2\/master.m3u8",
+            "asset_url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/master.m3u8",
             "id": "urn:rts:video:14895342",
-            "metadata_url": "https:\/\/il.srgssr.ch\/integrationlayer\/2.1\/mediaComposition\/byUrn\/urn:rts:video:14895342?onlyChapters=true&vector=appplay",
+            "metadata_url": "https://il.srgssr.ch/integrationlayer/2.1/mediaComposition/byUrn/urn:rts:video:14895342?onlyChapters=true&vector=appplay",
             "origin": "ch.srgssr.Pillarbox-demo"
         },
         "os": {
@@ -230,7 +230,7 @@ Some remarks:
         "name": "CoreMediaErrorDomain(-12318)",
         "position": 1024,
         "severity": "WARNING",
-        "url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14895342\/85891228-1e53-371b-997a-094380f533e2\/index-f4-v1.m3u8"
+        "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f4-v1.m3u8"
     },
     "event_name": "ERROR",
     "session_id": "ebdb3da7-bc77-454e-9de0-a1dfa8091e84",
@@ -305,7 +305,7 @@ The stall duration **MUST** be measured in wall-clock time, independently of pla
             "duration": 0
         },
         "stream_type": "on-demand",
-        "url": "https:\/\/rts-vod-amd.akamaized.net\/ww\/14895342\/85891228-1e53-371b-997a-094380f533e2\/index-f5-v1.m3u8",
+        "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f5-v1.m3u8",
         "vpn": false
     },
     "event_name": "STOP",
