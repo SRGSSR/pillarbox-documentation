@@ -1,4 +1,4 @@
-# Pillarbox
+# Overview
 
 Pillarbox is a versatile media playback ecosystem engineered for the web, Android, and Apple platforms.
 
@@ -8,8 +8,6 @@ their own unique playback experience.
 
 It integrates seamlessly with platform features and offers robust customization options for metadata handling,
 asset management, and analytics.
-
-## Overview
 
 This page covers documentation regarding our core methodologies, cross-platform specifications, development workflows,
 and best practices.
