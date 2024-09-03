@@ -1,8 +1,10 @@
 # Monitoring Specification
 
 ---
+
 **Version:** 1.0 |
 **Date:** August 19, 2024
+
 ---
 
 ## Introduction
