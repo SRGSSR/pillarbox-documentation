@@ -98,10 +98,10 @@ The `media` JSON data dictionary supports the following keys:
 
 | Field          | Description                                               | Format | Examples                                                                                 |
 |----------------|-----------------------------------------------------------|--------|------------------------------------------------------------------------------------------|
-| `asset_url`    | The URL of the content being played                       | String | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index.m3u8`     |
+| `asset_url`    | The URL of the content being played                       | String | `https://...`                                                                            |
 | `id`           | A unique media identifier                                 | String | `urn:rts:video:123456`                                                                   |
-| `metadata_url` | The URL where media metadata was fetched                  | String | `https://il.srgssr.ch/integrationlayer/2.0/mediaComposition/byUrn/urn:rts:video:3608506` |
-| `origin`       | A description of the context in which the media is played | String | `ch.srgssr.app`, `https://www.rts.ch/info/article/123`                                   |
+| `metadata_url` | The URL where media metadata was fetched                  | String | `https://...`                                                                            |
+| `origin`       | A description of the context in which the media is played | String | `ch.srgssr.app`, `https://...`                                                           |
 
 Some remarks:
 
@@ -232,7 +232,7 @@ The associated event data dictionary supports the following keys:
 | `position`           | The current player position, relative to the beginning of the playlist. Negative values are admitted | Time in milliseconds                                   | `16548`                                                                                     |
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available               | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932`                                                                             |
 | `severity`           | The error severity                                                                                   | `WARNING`, `FATAL`                                     | `WARNING`                                                                                   |
-| `url`                | The URL that was affected by the error                                                               | String                                                 | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
+| `url`                | The URL that was affected by the error                                                               | String                                                 | `https://...`                                                                               |
 
 > [!ATTENTION]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
@@ -291,7 +291,7 @@ The associated event data dictionary supports the following keys:
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available               | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932`                                                                             |
 | `stall`              | Stall information                                                                                    | JSON dictionary                                        | `{ ... }`                                                                                   |
 | `stream_type`        | Stream type                                                                                          | `On-demand`, `Live`                                    | `On-demand`                                                                                 |
-| `url`                | The URL that is being played                                                                         | String                                                 | `https://rts1-lsvs.akamaized.net/out/v1/62441d2399f14dce9e558b5503edba11/index_1_948290.ts` |
+| `url`                | The URL that is being played                                                                         | String                                                 | `https://...`                                                                               |
 | `vpn`                | A value indicating whether a VPN is enabled on the device                                            | Boolean                                                | `true`                                                                                      |
 
 > [!ATTENTION]
