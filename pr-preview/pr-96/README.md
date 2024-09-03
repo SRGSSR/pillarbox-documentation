@@ -1,6 +1,6 @@
 # Overview
 
-Pillarbox is a versatile media playback ecosystem engineered for the web, Android, and Apple platforms.
+Pillarbox is a versatile media playback ecosystem engineered for Android, Apple, and Web platforms.
 
 Pillarbox is built to be adaptable and generic, ensuring it can be deployed across a variety of media applications. A
 key principle of Pillarbox is that it imposes **no user interface** constraints, empowering each product team to craft
