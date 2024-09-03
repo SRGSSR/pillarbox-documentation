@@ -1,7 +1,7 @@
 <!-- markdownlint-disable-next-line MD041 -->
 [![Pillarbox logo](README-images/logo.jpg)](https://github.com/SRGSSR/pillarbox-documentation)
 
-This repository provides comprehensive documentation and specifications for the Pillarbox player solution, which
+This repository provides comprehensive documentation and specifications for the Pillarbox player product, which
 supports Android, Apple, and Web platforms.
 
 Our goal is to ensure that developers and stakeholders have access to clear and detailed guidelines to facilitate the
