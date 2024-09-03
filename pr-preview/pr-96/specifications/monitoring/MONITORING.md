@@ -3,11 +3,6 @@
 ---
 **Version:** 1.0 |
 **Date:** August 19, 2024
-
-JSON Schemas:
-[start-schema.json](/public/specifications/monitoring/schemas/start-schema.json ':ignore'),
-[error-schema.json](/public/specifications/monitoring/schemas/error-schema.json ':ignore'),
-[status-schema.json](/public/specifications/monitoring/schemas/status-schema.json ':ignore')
 ---
 
 ## Introduction
@@ -71,6 +66,10 @@ The associated event data dictionary supports the following keys:
 > [!ATTENTION]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
 > possible. If some information cannot be reliably determined it **SHOULD** be omitted.
+
+### JSON Schema
+
+[start-schema.json](/public/specifications/monitoring/schemas/start-schema.json ':ignore')
 
 ### Browser
 
@@ -245,6 +244,10 @@ Some remarks:
   URLs, provided this information is available.
 - The `log` is informally defined so that any useful information can be added for investigation purposes.
 
+### JSON Schema
+
+[error-schema.json](/public/specifications/monitoring/schemas/error-schema.json ':ignore')
+
 ### Example
 
 ```json
@@ -300,6 +303,10 @@ Some remarks:
 - The `playback_duration` **MUST** be measured in wall-clock time, independently of playback speed adjustments.
 - The `stream_type` is present in status events only, as those can more closely match potential stream type changes when
   a live playlist is closed and turns into an on-demand one.
+
+### JSON Schema
+
+[status-schema.json](/public/specifications/monitoring/schemas/status-schema.json ':ignore')
 
 ### Stall
 
