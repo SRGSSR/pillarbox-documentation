@@ -17,7 +17,7 @@ and best practices.
 | Platform   | Repository Link                                                  | Demo Link                                                                           | Documentation Link                                                                                 |
 |------------|------------------------------------------------------------------|-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
 | 🤖 Android | [pillarbox-android](https://github.com/SRGSSR/pillarbox-android) | [Demo Android](https://github.com/SRGSSR/pillarbox-android?tab=readme-ov-file#demo) | [Docs Android](https://github.com/SRGSSR/pillarbox-android?tab=readme-ov-file#integrate-pillarbox) |
-| 🍎 Apple   | [pillarbox-apple](https://github.com/SRGSSR/pillarbox-apple)     | [Demo Apple](https://testflight.apple.com/join/TS6ngLqf)                            | [Docs Apple](https://swiftpackageindex.com/SRGSSR/pillarbox-apple/2.0.0/documentation/pillarboxplayer)                                 |
+| 🍎 Apple   | [pillarbox-apple](https://github.com/SRGSSR/pillarbox-apple)     | [Demo Apple](https://testflight.apple.com/join/TS6ngLqf)                            | [Docs Apple](https://swiftpackageindex.com/SRGSSR/pillarbox-apple/3.0.0/documentation/pillarboxplayer)                                 |
 | 🌐 Web     | [pillarbox-web](https://github.com/SRGSSR/pillarbox-web)         | [Demo Web](https://srgssr.github.io/pillarbox-web-demo/)                            | [Docs Web](https://srgssr.github.io/pillarbox-web/api/)                                            |
 
 ## Web Tools for Pillarbox
