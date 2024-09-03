@@ -37,6 +37,6 @@ For more information, please refer to the [LICENSE](../LICENSE) file.
 
 [docsify]: https://docsify.js.org/
 [pillarbox-docs]: https://srgssr.github.io/pillarbox-documentation
-[open-issues]: https://github.com/your-company/pillarbox-documentation/issues/new
-[submit-pr]: https://github.com/your-company/pillarbox-documentation/compare
-[discussions]: https://github.com/your-company/pillarbox-documentation/discussions
+[open-issues]: https://github.com/srgssr/pillarbox-documentation/issues/new
+[submit-pr]: https://github.com/srgssr/pillarbox-documentation/compare
+[discussions]: https://github.com/srgssr/pillarbox-documentation/discussions
