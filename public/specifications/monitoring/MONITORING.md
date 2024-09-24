@@ -18,6 +18,19 @@ Pillarbox integrates with a monitoring platform that provides real-time and hist
 
 This article describes the flexible event model that allows our players to send data to our monitoring platform.
 
+## JSON Key / Value Naming Conventions
+
+The following naming conventions are applied for key / values appearing in JSON payloads:
+
+- Keys use snake case.
+- Values are provided in a form best suited for display, usually capitalized, with possible exceptions when brand
+  names are involved (e.g. macOS must not be capitalized as MacOS).
+- The only values provided in uppercase are event types (e.g. `START`).
+
+> [!IMPORTANT]
+> Values provided by the system (e.g. device names) can be assumed as having a form already best suited for display.
+Their case must not be changed.
+
 ## General Event Format
 
 Events provide data related to specific points of interests in the lifetime of a playback session. Three kinds of event
@@ -38,7 +51,7 @@ following keys:
 | `timestamp`  | The timestamp at the time the event is sent | [Unix timestamp](https://unixtime.org) in milliseconds          | `1717665997932`                        |
 | `version`    | The version of the JSON format              | Number                                                          | 1                                      |
 
-> [!ATTENTION]
+> [!IMPORTANT]
 > All keys listed above are mandatory.
 
 All events associated with the same session **MUST** be assigned the same `session_id`. The `data` format associated
@@ -65,7 +78,7 @@ The associated event data dictionary supports the following keys:
 | `qoe_timings` | QoE timings                  | JSON dictionary | `{ ... }` |
 | `qos_timings` | QoS timings                  | JSON dictionary | `{ ... }` |
 
-> [!ATTENTION]
+> [!IMPORTANT]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
 > possible. If some information cannot be reliably determined it **SHOULD** be omitted.
 
@@ -138,7 +151,7 @@ The `qoe_timings` JSON data dictionary supports the following keys:
 | `metadata` | Time the user waited for metadata to be retrieved | Time in milliseconds | `412`    |
 | `total`    | Total time the user waited for playback to start  | Time in milliseconds | `1763`   |
 
-> [!ATTENTION]
+> [!IMPORTANT]
 > QoE timings measure the perceived user experience. If content preloading in a playlist makes it possible to start
 > instantaneously (or almost), these values **SHOULD** be zero or close to zero.
 
@@ -153,7 +166,7 @@ The `qos_timings` JSON data dictionary supports the following keys:
 | `metadata` | Time for metadata to be retrieved by the player | Time in milliseconds | `412`    |
 | `token`    | Time to fetch an authorization token            | Time in milliseconds | `356`    |
 
-> [!ATTENTION]
+> [!IMPORTANT]
 > QoS timings measure actual system performance. They **SHOULD** reflect the time technically required to fetch content,
 > whether content preloading could take place or not.
 
@@ -217,7 +230,7 @@ An event with the name `ERROR` **MUST** be sent when an error, either fatal or n
 - A non-fatal error (warning) informs about potential issues that occur behind the scenes and might affect the playback
   experience negatively.
 
-> [!ATTENTION]
+> [!IMPORTANT]
 > A fatal `ERROR` at startup **MUST** always be preceded by a `START` event. If playback is restarted after a fatal
 `ERROR` a new session **MUST** be created, beginning with a new `START` event.
 
@@ -231,10 +244,10 @@ The associated event data dictionary supports the following keys:
 | `name`               | The name of the error                                                                                | String                                                 | `ERR-404`                                                                                   |
 | `position`           | The current player position, relative to the beginning of the playlist. Negative values are admitted | Time in milliseconds                                   | `16548`                                                                                     |
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available               | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932`                                                                             |
-| `severity`           | The error severity                                                                                   | `WARNING`, `FATAL`                                     | `WARNING`                                                                                   |
+| `severity`           | The error severity                                                                                   | `Warning`, `Fatal`                                     | `Warning`                                                                                   |
 | `url`                | The URL that was affected by the error                                                               | String                                                 | `https://...`                                                                               |
 
-> [!ATTENTION]
+> [!IMPORTANT]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
 > possible. If some information cannot be reliably determined it **SHOULD** be omitted.
 
@@ -258,7 +271,7 @@ Some remarks:
     "message": "Segment exceeds specified bandwidth for variant",
     "name": "CoreMediaErrorDomain(-12318)",
     "position": 1024,
-    "severity": "WARNING",
+    "severity": "Warning",
     "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f4-v1.m3u8"
   },
   "event_name": "ERROR",
@@ -286,6 +299,7 @@ The associated event data dictionary supports the following keys:
 | `bitrate`            | Bitrate of the content being played                                                                  | Number in bits per second                              | `1000000`                                                                                   |
 | `buffered_duration`  | Duration of the content currently available in buffer                                                | Time in milliseconds                                   | `12000`                                                                                     |
 | `duration`           | The content duration, as retrieved from the playlist                                                 | Time in milliseconds                                   | `16548`                                                                                     |
+| `frame_drops`        | The total number of frame drops experienced during the session                                       | Number                                                 | `12`                                                                                        |
 | `playback_duration`  | The duration of the playback session                                                                 | Time in milliseconds                                   | `40000`                                                                                     |
 | `position`           | The current player position, relative to the beginning of the playlist. Negative values are admitted | Time in milliseconds                                   | `16548`                                                                                     |
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available               | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932`                                                                             |
@@ -294,7 +308,7 @@ The associated event data dictionary supports the following keys:
 | `url`                | The URL that is being played                                                                         | String                                                 | `https://...`                                                                               |
 | `vpn`                | A value indicating whether a VPN is enabled on the device                                            | Boolean                                                | `true`                                                                                      |
 
-> [!ATTENTION]
+> [!IMPORTANT]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
 > possible. If some information cannot be reliably determined it **SHOULD** be omitted.
 
@@ -321,7 +335,7 @@ The `stall` JSON data dictionary supports the following keys:
 
 The stall duration **MUST** be measured in wall-clock time, independently of playback speed adjustments.
 
-> [!ATTENTION]
+> [!IMPORTANT]
 > If a player is able to provide stall information, both `count` and `duration` **MUST** be supplied, even if zero.
 
 ### Example
@@ -334,13 +348,14 @@ The stall duration **MUST** be measured in wall-clock time, independently of pla
     "bitrate": 6129146,
     "buffered_duration": 36000,
     "duration": 2386040,
+    "frame_drops": 2,
     "playback_duration": 10663,
     "position": 10618,
     "stall": {
       "count": 0,
       "duration": 0
     },
-    "stream_type": "on-demand",
+    "stream_type": "On-demand",
     "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f5-v1.m3u8",
     "vpn": false
   },
