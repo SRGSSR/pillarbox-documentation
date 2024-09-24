@@ -37,7 +37,7 @@
         },
         "severity": {
           "type": "string",
-          "enum": ["WARNING", "FATAL"],
+          "enum": ["Warning", "Fatal"],
           "description": "The severity of the error."
         },
         "url": {
