@@ -1,0 +1,22 @@
+name: Github Page
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  github-page:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy GitHub Page 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          branch: gh-pages
+          folder: public
+          force: false
+          clean-exclude: pr-preview/
