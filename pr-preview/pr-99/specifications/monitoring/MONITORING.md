@@ -29,7 +29,7 @@ The following naming conventions are applied for key / values appearing in JSON 
 
 > [!IMPORTANT]
 > Values provided by the system (e.g. device names) can be assumed as having a form already best suited for display.
-Their case must not be changed.
+> Their case must not be changed.
 
 ## General Event Format
 
