@@ -84,7 +84,7 @@ The associated event data dictionary supports the following keys:
 
 ### JSON Schema
 
-[start-schema.json](/specifications/monitoring/schemas/start-schema.json ':ignore')
+[start-schema.json](specifications/monitoring/schemas/start-schema.json ':ignore')
 
 ### Browser
 
@@ -261,7 +261,7 @@ Some remarks:
 
 ### JSON Schema
 
-[error-schema.json](/specifications/monitoring/schemas/error-schema.json ':ignore')
+[error-schema.json](specifications/monitoring/schemas/error-schema.json ':ignore')
 
 ### Example
 
@@ -322,7 +322,7 @@ Some remarks:
 
 ### JSON Schema
 
-[status-schema.json](/specifications/monitoring/schemas/status-schema.json ':ignore')
+[status-schema.json](specifications/monitoring/schemas/status-schema.json ':ignore')
 
 ### Stall
 
