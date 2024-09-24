@@ -27,7 +27,7 @@ The following naming conventions are applied for key / values appearing in JSON 
   names are involved (e.g. macOS must not be capitalized as MacOS).
 - The only values provided in uppercase are event types (e.g. `START`).
 
-> [!IMPORTANT]
+> [!WARNING]
 > Values provided by the system (e.g. device names) can be assumed as having a form already best suited for display.
 > Their case must not be changed.
 
@@ -51,7 +51,7 @@ following keys:
 | `timestamp`  | The timestamp at the time the event is sent | [Unix timestamp](https://unixtime.org) in milliseconds          | `1717665997932`                        |
 | `version`    | The version of the JSON format              | Number                                                          | 1                                      |
 
-> [!IMPORTANT]
+> [!WARNING]
 > All keys listed above are mandatory.
 
 All events associated with the same session **MUST** be assigned the same `session_id`. The `data` format associated
@@ -78,7 +78,7 @@ The associated event data dictionary supports the following keys:
 | `qoe_timings` | QoE timings                  | JSON dictionary | `{ ... }` |
 | `qos_timings` | QoS timings                  | JSON dictionary | `{ ... }` |
 
-> [!IMPORTANT]
+> [!WARNING]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
 > possible. If some information cannot be reliably determined it **SHOULD** be omitted.
 
@@ -151,7 +151,7 @@ The `qoe_timings` JSON data dictionary supports the following keys:
 | `metadata` | Time the user waited for metadata to be retrieved | Time in milliseconds | `412`    |
 | `total`    | Total time the user waited for playback to start  | Time in milliseconds | `1763`   |
 
-> [!IMPORTANT]
+> [!WARNING]
 > QoE timings measure the perceived user experience. If content preloading in a playlist makes it possible to start
 > instantaneously (or almost), these values **SHOULD** be zero or close to zero.
 
@@ -166,7 +166,7 @@ The `qos_timings` JSON data dictionary supports the following keys:
 | `metadata` | Time for metadata to be retrieved by the player | Time in milliseconds | `412`    |
 | `token`    | Time to fetch an authorization token            | Time in milliseconds | `356`    |
 
-> [!IMPORTANT]
+> [!WARNING]
 > QoS timings measure actual system performance. They **SHOULD** reflect the time technically required to fetch content,
 > whether content preloading could take place or not.
 
@@ -230,7 +230,7 @@ An event with the name `ERROR` **MUST** be sent when an error, either fatal or n
 - A non-fatal error (warning) informs about potential issues that occur behind the scenes and might affect the playback
   experience negatively.
 
-> [!IMPORTANT]
+> [!WARNING]
 > A fatal `ERROR` at startup **MUST** always be preceded by a `START` event. If playback is restarted after a fatal
 `ERROR` a new session **MUST** be created, beginning with a new `START` event.
 
@@ -247,7 +247,7 @@ The associated event data dictionary supports the following keys:
 | `severity`           | The error severity                                                                                   | `Warning`, `Fatal`                                     | `Warning`                                                                                   |
 | `url`                | The URL that was affected by the error                                                               | String                                                 | `https://...`                                                                               |
 
-> [!IMPORTANT]
+> [!WARNING]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
 > possible. If some information cannot be reliably determined it **SHOULD** be omitted.
 
@@ -308,7 +308,7 @@ The associated event data dictionary supports the following keys:
 | `url`                | The URL that is being played                                                                         | String                                                 | `https://...`                                                                               |
 | `vpn`                | A value indicating whether a VPN is enabled on the device                                            | Boolean                                                | `true`                                                                                      |
 
-> [!IMPORTANT]
+> [!WARNING]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
 > possible. If some information cannot be reliably determined it **SHOULD** be omitted.
 
@@ -335,7 +335,7 @@ The `stall` JSON data dictionary supports the following keys:
 
 The stall duration **MUST** be measured in wall-clock time, independently of playback speed adjustments.
 
-> [!IMPORTANT]
+> [!WARNING]
 > If a player is able to provide stall information, both `count` and `duration` **MUST** be supplied, even if zero.
 
 ### Example
