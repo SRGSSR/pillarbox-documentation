@@ -204,7 +204,7 @@ The `screen` JSON data dictionary supports the following keys:
       "platform": "Apple",
       "version": "2.0.0-49"
     },
-    "qoe_metrics": {
+    "qoe_timings": {
       "asset": 1164,
       "metadata": 320,
       "total": 1484
