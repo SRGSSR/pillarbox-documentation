@@ -63,10 +63,6 @@
           "type": "string",
           "format": "uri",
           "description": "The URL of the content currently being played. This should describe the content as closely as possible, including media playlists or segment URLs if available."
-        },
-        "vpn": {
-          "type": "boolean",
-          "description": "Indicates whether a VPN is enabled on the device."
         }
       }
     },
