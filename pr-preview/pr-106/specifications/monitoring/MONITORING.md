@@ -278,7 +278,8 @@ Some remarks:
   "event_name": "ERROR",
   "session_id": "ebdb3da7-bc77-454e-9de0-a1dfa8091e84",
   "timestamp": 1723640598877,
-  "version": 1
+  "version": 1,
+  "vpn": false
 }
 ```
 
@@ -356,8 +357,7 @@ The stall duration **MUST** be measured in wall-clock time, independently of pla
       "duration": 0
     },
     "stream_type": "On-demand",
-    "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f5-v1.m3u8",
-    "vpn": false
+    "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f5-v1.m3u8"
   },
   "event_name": "STOP",
   "session_id": "ebdb3da7-bc77-454e-9de0-a1dfa8091e84",
