@@ -273,13 +273,13 @@ Some remarks:
     "name": "CoreMediaErrorDomain(-12318)",
     "position": 1024,
     "severity": "Warning",
-    "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f4-v1.m3u8"
+    "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f4-v1.m3u8",
+    "vpn": false
   },
   "event_name": "ERROR",
   "session_id": "ebdb3da7-bc77-454e-9de0-a1dfa8091e84",
   "timestamp": 1723640598877,
-  "version": 1,
-  "vpn": false
+  "version": 1
 }
 ```
 
