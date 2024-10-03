@@ -246,6 +246,7 @@ The associated event data dictionary supports the following keys:
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available               | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932`                                                                             |
 | `severity`           | The error severity                                                                                   | `Warning`, `Fatal`                                     | `Warning`                                                                                   |
 | `url`                | The URL that was affected by the error                                                               | String                                                 | `https://...`                                                                               |
+| `vpn`                | A value indicating whether a VPN is enabled on the device                                            | Boolean                                                | `true`                                                                                      |
 
 > [!WARNING]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
@@ -306,7 +307,6 @@ The associated event data dictionary supports the following keys:
 | `stall`              | Stall information                                                                                    | JSON dictionary                                        | `{ ... }`                                                                                   |
 | `stream_type`        | Stream type                                                                                          | `On-demand`, `Live`                                    | `On-demand`                                                                                 |
 | `url`                | The URL that is being played                                                                         | String                                                 | `https://...`                                                                               |
-| `vpn`                | A value indicating whether a VPN is enabled on the device                                            | Boolean                                                | `true`                                                                                      |
 
 > [!WARNING]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
