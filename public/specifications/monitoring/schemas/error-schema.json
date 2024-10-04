@@ -44,6 +44,10 @@
           "type": "string",
           "format": "uri",
           "description": "The URL that was affected by the error. This should describe the content that was affected as closely as possible."
+        },
+        "vpn": {
+          "type": "boolean",
+          "description": "Indicates whether a VPN is enabled on the device."
         }
       },
       "required": ["message", "name", "severity"]

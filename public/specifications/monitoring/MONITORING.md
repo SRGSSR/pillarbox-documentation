@@ -246,6 +246,7 @@ The associated event data dictionary supports the following keys:
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available               | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932`                                                                             |
 | `severity`           | The error severity                                                                                   | `Warning`, `Fatal`                                     | `Warning`                                                                                   |
 | `url`                | The URL that was affected by the error                                                               | String                                                 | `https://...`                                                                               |
+| `vpn`                | A value indicating whether a VPN is enabled on the device                                            | Boolean                                                | `true`                                                                                      |
 
 > [!WARNING]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
@@ -272,7 +273,8 @@ Some remarks:
     "name": "CoreMediaErrorDomain(-12318)",
     "position": 1024,
     "severity": "Warning",
-    "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f4-v1.m3u8"
+    "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f4-v1.m3u8",
+    "vpn": false
   },
   "event_name": "ERROR",
   "session_id": "ebdb3da7-bc77-454e-9de0-a1dfa8091e84",
@@ -306,7 +308,6 @@ The associated event data dictionary supports the following keys:
 | `stall`              | Stall information                                                                                    | JSON dictionary                                        | `{ ... }`                                                                                   |
 | `stream_type`        | Stream type                                                                                          | `On-demand`, `Live`                                    | `On-demand`                                                                                 |
 | `url`                | The URL that is being played                                                                         | String                                                 | `https://...`                                                                               |
-| `vpn`                | A value indicating whether a VPN is enabled on the device                                            | Boolean                                                | `true`                                                                                      |
 
 > [!WARNING]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
@@ -356,8 +357,7 @@ The stall duration **MUST** be measured in wall-clock time, independently of pla
       "duration": 0
     },
     "stream_type": "On-demand",
-    "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f5-v1.m3u8",
-    "vpn": false
+    "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f5-v1.m3u8"
   },
   "event_name": "STOP",
   "session_id": "ebdb3da7-bc77-454e-9de0-a1dfa8091e84",
