@@ -223,12 +223,8 @@ The `screen` JSON data dictionary supports the following keys:
 
 ## Error Event `data`
 
-An event with the name `ERROR` **MUST** be sent when an error, either fatal or not, has been encountered:
-
-- A fatal error makes playback fail without the possibility to recover, either when playback is started or during
+An event with the name `ERROR` **MUST** be sent when a fatal error makes playback fail without the possibility to recover, either when playback is started or during
   playback (e.g. following a network failure).
-- A non-fatal error (warning) informs about potential issues that occur behind the scenes and might affect the playback
-  experience negatively.
 
 > [!WARNING]
 > A fatal `ERROR` at startup **MUST** always be preceded by a `START` event. If playback is restarted after a fatal
