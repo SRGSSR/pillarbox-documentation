@@ -264,8 +264,8 @@ Some remarks:
 ```json
 {
   "data": {
-    "message": "Segment exceeds specified bandwidth for variant",
-    "name": "CoreMediaErrorDomain(-12318)",
+    "message": "Not found",
+    "name": "PillarboxCoreBusiness.DataError(1)",
     "position": 1024,
     "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f4-v1.m3u8",
     "vpn": false
