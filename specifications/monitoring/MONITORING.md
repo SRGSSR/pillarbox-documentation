@@ -223,12 +223,8 @@ The `screen` JSON data dictionary supports the following keys:
 
 ## Error Event `data`
 
-An event with the name `ERROR` **MUST** be sent when an error, either fatal or not, has been encountered:
-
-- A fatal error makes playback fail without the possibility to recover, either when playback is started or during
+An event with the name `ERROR` **MUST** be sent when a fatal error makes playback fail without the possibility to recover, either when playback is started or during
   playback (e.g. following a network failure).
-- A non-fatal error (warning) informs about potential issues that occur behind the scenes and might affect the playback
-  experience negatively.
 
 > [!WARNING]
 > A fatal `ERROR` at startup **MUST** always be preceded by a `START` event. If playback is restarted after a fatal
@@ -244,7 +240,6 @@ The associated event data dictionary supports the following keys:
 | `name`               | The name of the error                                                                                | String                                                 | `ERR-404`                                                                                   |
 | `position`           | The current player position, relative to the beginning of the playlist. Negative values are admitted | Time in milliseconds                                   | `16548`                                                                                     |
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available               | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932`                                                                             |
-| `severity`           | The error severity                                                                                   | `Warning`, `Fatal`                                     | `Warning`                                                                                   |
 | `url`                | The URL that was affected by the error                                                               | String                                                 | `https://...`                                                                               |
 | `vpn`                | A value indicating whether a VPN is enabled on the device                                            | Boolean                                                | `true`                                                                                      |
 
@@ -269,10 +264,9 @@ Some remarks:
 ```json
 {
   "data": {
-    "message": "Segment exceeds specified bandwidth for variant",
-    "name": "CoreMediaErrorDomain(-12318)",
+    "message": "Not found",
+    "name": "PillarboxCoreBusiness.DataError(1)",
     "position": 1024,
-    "severity": "Warning",
     "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f4-v1.m3u8",
     "vpn": false
   },
