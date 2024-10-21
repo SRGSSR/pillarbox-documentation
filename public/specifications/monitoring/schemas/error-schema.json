@@ -35,11 +35,6 @@
           "type": "integer",
           "description": "The current player timestamp, as retrieved from the playlist, in Unix milliseconds. This field may be omitted if not available."
         },
-        "severity": {
-          "type": "string",
-          "enum": ["Warning", "Fatal"],
-          "description": "The severity of the error."
-        },
         "url": {
           "type": "string",
           "format": "uri",
@@ -50,7 +45,7 @@
           "description": "Indicates whether a VPN is enabled on the device."
         }
       },
-      "required": ["message", "name", "severity"]
+      "required": ["message", "name"]
     },
     "event_name": {
       "type": "string",
