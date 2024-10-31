@@ -14,17 +14,17 @@ and best practices.
 
 ## Platform Repositories and Resources
 
-| Platform   | Repository Link                                                  | Demo Link                                                                           | Documentation Link                                                                                 |
-|------------|------------------------------------------------------------------|-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| 🤖 Android | [pillarbox-android](https://github.com/SRGSSR/pillarbox-android) | [Demo Android](https://github.com/SRGSSR/pillarbox-android?tab=readme-ov-file#demo) | [Docs Android](https://github.com/SRGSSR/pillarbox-android?tab=readme-ov-file#integrate-pillarbox) |
-| 🍎 Apple   | [pillarbox-apple](https://github.com/SRGSSR/pillarbox-apple)     | [Demo Apple](https://testflight.apple.com/join/TS6ngLqf)                            | [Docs Apple](https://swiftpackageindex.com/SRGSSR/pillarbox-apple/3.0.0/documentation/pillarboxplayer)                                 |
-| 🌐 Web     | [pillarbox-web](https://github.com/SRGSSR/pillarbox-web)         | [Demo Web](https://srgssr.github.io/pillarbox-web-demo/)                            | [Docs Web](https://srgssr.github.io/pillarbox-web/api/)                                            |
+| Platform   | Repository Link                                                  | Demo Link                                                                           | Documentation Link                                                                                     |
+|------------|------------------------------------------------------------------|-------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| 🤖 Android | [pillarbox-android](https://github.com/SRGSSR/pillarbox-android) | [Demo Android](https://github.com/SRGSSR/pillarbox-android?tab=readme-ov-file#demo) | [Docs Android](https://android.pillarbox.ch/api)                                                       |
+| 🍎 Apple   | [pillarbox-apple](https://github.com/SRGSSR/pillarbox-apple)     | [Demo Apple](https://testflight.apple.com/join/TS6ngLqf)                            | [Docs Apple](https://swiftpackageindex.com/SRGSSR/pillarbox-apple/3.0.0/documentation/pillarboxplayer) |
+| 🌐 Web     | [pillarbox-web](https://github.com/SRGSSR/pillarbox-web)         | [Demo Web](https://demo.pillarbox.ch)                                               | [Docs Web](https://web.pillarbox.ch/api/)                                                              |
 
 ## Web Tools for Pillarbox
 
 `pillarbox-web` provides a set of web tools for additional functionalities to enhance the developer's experience.
 
-| Repository Link                                                                    | Demo Link                                                    | Description                                      |
-|------------------------------------------------------------------------------------|--------------------------------------------------------------|--------------------------------------------------|
-| [pillarbox-web-suite](https://github.com/SRGSSR/pillarbox-web-suite)               | [Demo](https://srgssr.github.io/pillarbox-web-suite/)        | A collection of plugins, themes, and components. |
-| [pillarbox-web-theme-editor](https://github.com/SRGSSR/pillarbox-web-theme-editor) | [Demo](https://srgssr.github.io/pillarbox-web-theme-editor/) | A tool for editing themes for the player.        |
+| Repository Link                                                                    | Demo Link                            | Description                                      |
+|------------------------------------------------------------------------------------|--------------------------------------|--------------------------------------------------|
+| [pillarbox-web-suite](https://github.com/SRGSSR/pillarbox-web-suite)               | [Demo](https://plugins.pillarbox.ch) | A collection of plugins, themes, and components. |
+| [pillarbox-web-theme-editor](https://github.com/SRGSSR/pillarbox-web-theme-editor) | [Demo](https://editor.pillarbox.ch)  | A tool for editing themes for the player.        |
