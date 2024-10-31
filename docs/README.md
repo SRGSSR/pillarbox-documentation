@@ -36,7 +36,7 @@ Feel free to [open issues][open-issues], [submit pull requests][submit-pr], or [
 For more information, please refer to the [LICENSE](../LICENSE) file.
 
 [docsify]: https://docsify.js.org/
-[pillarbox-docs]: https://srgssr.github.io/pillarbox-documentation
+[pillarbox-docs]: https://www.pillarbox.ch
 [open-issues]: https://github.com/srgssr/pillarbox-documentation/issues/new
 [submit-pr]: https://github.com/srgssr/pillarbox-documentation/compare
 [discussions]: https://github.com/srgssr/pillarbox-documentation/discussions
