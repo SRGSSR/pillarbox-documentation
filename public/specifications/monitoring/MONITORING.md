@@ -99,11 +99,11 @@ The `browser` JSON data dictionary supports the following keys:
 
 The `device` JSON data dictionary supports the following keys:
 
-| Field   | Description                                  | Format                                               | Examples                               |
-|---------|----------------------------------------------|------------------------------------------------------|----------------------------------------|
-| `id`    | A unique anonymous identifier for the device | String                                               | `105124c0-fa84-4028-908e-618f2402d46f` |
-| `model` | The device model                             | String                                               | `iPhone15.7`, `Samsung Galaxy S24`     |
-| `type`  | The device type                              | `Car`, `Desktop`, `Headset`, `Phone`, `Tablet`, `TV` | `Phone`                                |
+| Field   | Description                                  | Format | Examples                                                  |
+|---------|----------------------------------------------|--------|-----------------------------------------------------------|
+| `id`    | A unique anonymous identifier for the device | String | `105124c0-fa84-4028-908e-618f2402d46f`                    |
+| `model` | The device model                             | String | `iPhone15.7`, `Samsung Galaxy S24`                        |
+| `type`  | The device type                              | String | `Car`, `Desktop`, `Headset`, `Phone`, `Tablet`, `TV`, ... |
 
 ### Media
 
