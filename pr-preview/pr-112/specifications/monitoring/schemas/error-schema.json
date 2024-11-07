@@ -1,0 +1,70 @@
+{
+  "$id": "https://github.com/SRGSSR/pillarbox-documentation/blob/main/Specifications/error-schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "description": "Data associated with the ERROR event, containing details about the error encountered during playback.",
+      "properties": {
+        "duration": {
+          "type": "number",
+          "description": "The content duration, as retrieved from the playlist, in milliseconds."
+        },
+        "log": {
+          "description": "Any additional information that might be helpful for debugging or investigation purposes. This can be any data type, including strings, objects, or arrays.",
+          "oneOf": [
+            { "type": "string" },
+            { "type": "object" },
+            { "type": "array" }
+          ]
+        },
+        "message": {
+          "type": "string",
+          "description": "The message associated with the error, which might be localized."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name or code of the error (e.g., ERR-404)."
+        },
+        "position": {
+          "type": "number",
+          "description": "The current player position relative to the beginning of the playlist, in milliseconds. Negative values are admitted."
+        },
+        "position_timestamp": {
+          "type": "integer",
+          "description": "The current player timestamp, as retrieved from the playlist, in Unix milliseconds. This field may be omitted if not available."
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "The URL that was affected by the error. This should describe the content that was affected as closely as possible."
+        },
+        "vpn": {
+          "type": "boolean",
+          "description": "Indicates whether a VPN is enabled on the device."
+        }
+      },
+      "required": ["message", "name"]
+    },
+    "event_name": {
+      "type": "string",
+      "enum": ["ERROR"],
+      "description": "The name of the event, which should be 'ERROR' for this schema."
+    },
+    "session_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "A unique identifier for the session."
+    },
+    "timestamp": {
+      "type": "integer",
+      "description": "The timestamp at the time the event is sent, in Unix milliseconds."
+    },
+    "version": {
+      "type": "integer",
+      "description": "The version of the JSON format."
+    }
+  },
+  "required": ["data", "event_name", "session_id", "timestamp", "version"]
+}

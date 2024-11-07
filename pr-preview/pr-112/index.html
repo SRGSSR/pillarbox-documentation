@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pillarbox Documentation</title>
+    <link rel="shortcut icon" type="image/x-icon"
+          href="//www.srgssr.ch/typo3conf/ext/is_design/Resources/Public/imgs/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+    <link rel="stylesheet" media="(prefers-color-scheme: dark)"
+          href="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+    <link rel="stylesheet" media="(prefers-color-scheme: light)"
+          href="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+
+    <style>
+        .sidebar-nav > p {
+            display: flex;
+            align-items: center;
+            gap: 0.2em;
+        }
+
+        :root {
+            --mono-hue: 210;
+            --mono-saturation: 5%;
+            --theme-hue: 213;
+            --theme-saturation: 21%;
+            --theme-lightness: 58%;
+            --base-font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+    window.$docsify = {
+        repo: 'https://github.com/SRGSSR/pillarbox-documentation',
+        auto2top: true,
+        relativePath: true,
+        coverpage: true,
+        loadSidebar: true,
+        subMaxLevel: 2
+    }
+</script>
+<!-- Docsify v4 -->
+<script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+
+<script src="//unpkg.com/docsify-plugin-flexible-alerts"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+
+    mermaid.initialize({startOnLoad: true});
+    window.mermaid = mermaid;
+</script>
+<script src="//unpkg.com/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
+</body>
+</html>
