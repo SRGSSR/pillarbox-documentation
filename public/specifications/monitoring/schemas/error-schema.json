@@ -7,6 +7,10 @@
       "type": "object",
       "description": "Data associated with the ERROR event, containing details about the error encountered during playback.",
       "properties": {
+        "audio": {
+            "type": "string",
+            "description": "The audio track language code."
+        },
         "duration": {
           "type": "number",
           "description": "The content duration, as retrieved from the playlist, in milliseconds."
@@ -34,6 +38,10 @@
         "position_timestamp": {
           "type": "integer",
           "description": "The current player timestamp, as retrieved from the playlist, in Unix milliseconds. This field may be omitted if not available."
+        },
+        "subtitles": {
+            "type": "string",
+            "description": "The subtitles language code (CC, subtitles or forced subtitles)."
         },
         "url": {
           "type": "string",

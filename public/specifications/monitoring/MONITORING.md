@@ -69,6 +69,7 @@ The associated event data dictionary supports the following keys:
 
 | Key           | Description                  | Format          | Examples  |
 |---------------|------------------------------|-----------------|-----------|
+| `application` | Application information      | JSON dictionary | `{ ... }` |
 | `browser`     | Browser information          | JSON dictionary | `{ ... }` |
 | `device`      | Device information           | JSON dictionary | `{ ... }` |
 | `media`       | Media information            | JSON dictionary | `{ ... }` |
@@ -85,6 +86,15 @@ The associated event data dictionary supports the following keys:
 ### JSON Schema
 
 [start-schema.json](specifications/monitoring/schemas/start-schema.json ':ignore')
+
+### Application
+
+The `application` JSON data dictionary supports the following keys:
+
+| Field     | Description                             | Format | Examples            |
+|-----------|-----------------------------------------|--------|---------------------|
+| `id`      | A unique identifier for the application | String | `ch.srgssr.app`     |
+| `version` | The application version                 | String | `1.2.3`             |
 
 ### Browser
 
@@ -109,18 +119,17 @@ The `device` JSON data dictionary supports the following keys:
 
 The `media` JSON data dictionary supports the following keys:
 
-| Field          | Description                                               | Format | Examples                                                                                 |
-|----------------|-----------------------------------------------------------|--------|------------------------------------------------------------------------------------------|
-| `asset_url`    | The URL of the content being played                       | String | `https://...`                                                                            |
-| `id`           | A unique media identifier                                 | String | `urn:rts:video:123456`                                                                   |
-| `metadata_url` | The URL where media metadata was fetched                  | String | `https://...`                                                                            |
-| `origin`       | A description of the context in which the media is played | String | `ch.srgssr.app`, `https://...`                                                           |
+| Field          | Description                                                  | Format | Examples                                                                                 |
+|----------------|--------------------------------------------------------------|--------|------------------------------------------------------------------------------------------|
+| `asset_url`    | The URL of the content being played                          | String | `https://...`                                                                            |
+| `id`           | A unique media identifier                                    | String | `urn:rts:video:123456`                                                                   |
+| `metadata_url` | The URL where media metadata was fetched                     | String | `https://...`                                                                            |
+| `origin`       | The URL of the web page in which the content is being played | String | `https://...`                                                                            |
 
 Some remarks:
 
 - Any token appended **by the client** to the URL of the asset being played **SHOULD NOT** appear in `asset_url`.
-- The `origin` is flexible but **SHOULD** describe the context of playback, for example an application identifier or the
-  URL of the web page hosting the media.
+- The `origin` is only meaningful for web implementations.
 
 ### Operating System
 
@@ -184,6 +193,10 @@ The `screen` JSON data dictionary supports the following keys:
 ```json
 {
   "data": {
+    "application": {
+      "id": "ch.srgssr.Pillarbox-demo",
+      "version": "1.0"
+    },
     "device": {
       "id": "8e9242a4-60b6-48f9-8dfb-6ee43e36c7eb",
       "model": "iPad13,4",
@@ -193,7 +206,6 @@ The `screen` JSON data dictionary supports the following keys:
       "asset_url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/master.m3u8",
       "id": "urn:rts:video:14895342",
       "metadata_url": "https://il.srgssr.ch/integrationlayer/2.1/mediaComposition/byUrn/urn:rts:video:14895342?onlyChapters=true&vector=appplay",
-      "origin": "ch.srgssr.Pillarbox-demo"
     },
     "os": {
       "name": "iPadOS",
@@ -234,12 +246,14 @@ The associated event data dictionary supports the following keys:
 
 | Key                  | Description                                                                                          | Format                                                 | Examples                                                                                    |
 |----------------------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| `audio`              | The audio track language code                                                                        | String (use standards like ISO or BCP 47)              | `en`                                                                                        |
 | `duration`           | The content duration, as retrieved from the playlist                                                 | Time in milliseconds                                   | `16548`                                                                                     |
 | `log`                | Any additional information that might be helpful                                                     | Any                                                    | `{ ... }`, `[...]`, `Stack trace symbols: ...`                                              |
 | `message`            | The message associated with the error (might be localized)                                           | String                                                 | `Not found`                                                                                 |
 | `name`               | The name of the error                                                                                | String                                                 | `ERR-404`                                                                                   |
 | `position`           | The current player position, relative to the beginning of the playlist. Negative values are admitted | Time in milliseconds                                   | `16548`                                                                                     |
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available               | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932`                                                                             |
+| `subtitles`          | The subtitles language code (CC, subtitles or forced subtitles)                                      | String (use standards like ISO or BCP 47)              | `en`                                                                                        |
 | `url`                | The URL that was affected by the error                                                               | String                                                 | `https://...`                                                                               |
 | `vpn`                | A value indicating whether a VPN is enabled on the device                                            | Boolean                                                | `true`                                                                                      |
 
@@ -264,9 +278,11 @@ Some remarks:
 ```json
 {
   "data": {
+    "audio": "en",
     "message": "Not found",
     "name": "PillarboxCoreBusiness.DataError(1)",
     "position": 1024,
+    "subtitles": "fr",
     "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f4-v1.m3u8",
     "vpn": false
   },
@@ -291,6 +307,7 @@ The associated event data dictionary supports the following keys:
 | Key                  | Description                                                                                          | Format                                                 | Examples                                                                                    |
 |----------------------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | `airplay`            | A value indicating whether AirPlay is currently active                                               | Boolean                                                | `true`                                                                                      |
+| `audio`              | The audio track language code                                                                        | String (use standards like ISO or BCP 47)              | `en`                                                                                        |
 | `bandwidth`          | Bandwidth                                                                                            | Number in bits per second                              | `4000000`                                                                                   |
 | `bitrate`            | Bitrate of the content being played                                                                  | Number in bits per second                              | `1000000`                                                                                   |
 | `buffered_duration`  | Duration of the content currently available in buffer                                                | Time in milliseconds                                   | `12000`                                                                                     |
@@ -301,6 +318,7 @@ The associated event data dictionary supports the following keys:
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available               | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932`                                                                             |
 | `stall`              | Stall information                                                                                    | JSON dictionary                                        | `{ ... }`                                                                                   |
 | `stream_type`        | Stream type                                                                                          | `On-demand`, `Live`                                    | `On-demand`                                                                                 |
+| `subtitles`          | The subtitles language code (CC, subtitles or forced subtitles)                                      | String (use standards like ISO or BCP 47)              | `en`                                                                                        |
 | `url`                | The URL that is being played                                                                         | String                                                 | `https://...`                                                                               |
 
 > [!WARNING]
@@ -339,6 +357,7 @@ The stall duration **MUST** be measured in wall-clock time, independently of pla
 {
   "data": {
     "airplay": false,
+    "audio": "en",
     "bandwidth": 23285774,
     "bitrate": 6129146,
     "buffered_duration": 36000,
@@ -351,6 +370,7 @@ The stall duration **MUST** be measured in wall-clock time, independently of pla
       "duration": 0
     },
     "stream_type": "On-demand",
+    "subtitles": "fr",
     "url": "https://rts-vod-amd.akamaized.net/ww/14895342/85891228-1e53-371b-997a-094380f533e2/index-f5-v1.m3u8"
   },
   "event_name": "STOP",

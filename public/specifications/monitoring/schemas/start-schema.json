@@ -7,6 +7,20 @@
       "type": "object",
       "description": "Data associated with the START event, containing details about the device, media, player, and other relevant information.",
       "properties": {
+        "application": {
+            "type": "object",
+            "description": "Information about the application.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "A unique identifier for the application."
+                },
+                "version": {
+                    "type": "string",
+                    "description": "The application version."
+                }
+            }
+        },
         "browser": {
           "type": "object",
           "description": "Information about the browser being used.",
