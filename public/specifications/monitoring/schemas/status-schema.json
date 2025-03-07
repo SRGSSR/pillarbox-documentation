@@ -11,6 +11,10 @@
           "type": "boolean",
           "description": "Indicates whether AirPlay is currently active."
         },
+        "audio": {
+            "type": "string",
+            "description": "The audio track language code."
+        },
         "bandwidth": {
           "type": "integer",
           "description": "The available bandwidth in bits per second."
@@ -58,6 +62,10 @@
           "type": "string",
           "enum": ["On-demand", "Live"],
           "description": "The type of stream being played, either 'On-demand' or 'Live'."
+        },
+        "subtitles": {
+            "type": "string",
+            "description": "The subtitles language code (CC, subtitles or forced subtitles)."
         },
         "url": {
           "type": "string",
