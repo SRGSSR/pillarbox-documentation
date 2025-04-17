@@ -313,6 +313,7 @@ The associated event data dictionary supports the following keys:
 | `buffered_duration`  | Duration of the content currently available in buffer                                                | Time in milliseconds                                   | `12000`                                                                                     |
 | `duration`           | The content duration, as retrieved from the playlist                                                 | Time in milliseconds                                   | `16548`                                                                                     |
 | `frame_drops`        | The total number of frame drops experienced during the session                                       | Number                                                 | `12`                                                                                        |
+| `log`                | Any additional information that might be helpful                                                     | Any                                                    | `{ ... }`, `[...]`, `Stack trace symbols: ...`                                              |
 | `playback_duration`  | The duration of the playback session                                                                 | Time in milliseconds                                   | `40000`                                                                                     |
 | `position`           | The current player position, relative to the beginning of the playlist. Negative values are admitted | Time in milliseconds                                   | `16548`                                                                                     |
 | `position_timestamp` | The current player timestamp, as retrieved from the playlist. Omitted if not available               | [Unix timestamp](https://unixtime.org) in milliseconds | `1717665997932`                                                                             |
@@ -332,6 +333,7 @@ Some remarks:
 - The `playback_duration` **MUST** be measured in wall-clock time, independently of playback speed adjustments.
 - The `stream_type` is present in status events only, as those can more closely match potential stream type changes when
   a live playlist is closed and turns into an on-demand one.
+- The `log` is informally defined so that any useful information can be added for investigation purposes.
 
 ### JSON Schema
 
