@@ -32,18 +32,12 @@
           "description": "The content duration, as retrieved from the playlist, in milliseconds."
         },
         "log": {
-            "description": "Any additional information that might be helpful for debugging or investigation purposes. This can be any data type, including strings, objects, or arrays.",
-            "oneOf": [
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "object"
-                },
-                {
-                    "type": "array"
-                }
-            ]
+          "description": "Any additional information that might be helpful for debugging or investigation purposes. This can be any data type, including strings, objects, or arrays.",
+          "oneOf": [
+            { "type": "string" },
+            { "type": "object" },
+            { "type": "array" }
+          ]
         },
         "playback_duration": {
           "type": "number",
