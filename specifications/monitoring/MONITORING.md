@@ -9,7 +9,7 @@
 
 ## Introduction
 
-Pillarbox integrates with a monitoring platform that provides real-time and historical dashboards for:
+Pillarbox integrates with a [monitoring platform](https://grafana.pillarbox.ch) that provides real-time and historical dashboards for:
 
 - Quality of Service (QoS): QoS refers to the performance level of a service, especially in terms of its transmission
   quality and service availability.
