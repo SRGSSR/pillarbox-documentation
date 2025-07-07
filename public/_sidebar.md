@@ -6,6 +6,7 @@
 **Specifications**
 
 * [Monitoring](/specifications/monitoring/MONITORING.md)
+* [Google Cast](/specifications/cast/CAST.md)
 
 **Methodology**
 
