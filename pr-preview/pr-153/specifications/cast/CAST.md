@@ -1,13 +1,10 @@
 # Google Cast specification
 
-Pillarbox cast receiver and sender can handle chapters if they both implements the specification. 
+Pillarbox cast receiver and sender can handle Pillarbox custom metadata
+- Chapters
+- Credits
 
-The chapters are stored into `MediaTrack` object with the following properties:
-- Id: `6000`
-- Type: `MediaTrack.TYPE_TEXT`
-- SubType: `MediaTrack.SUBTYPE_CHAPTERS`
-- ContentType: `pillarbox/chapters`
-
+if both of them implements the same specification. Those metadata are stored inside the google cast object `MediaInfo` inside the `customData` field.
 
 ## Chapter format
 
@@ -19,13 +16,23 @@ The chapters are stored into `MediaTrack` object with the following properties:
 | `title`  | The title of the chapter | String         | `Chapter title`                        |
 | `imageUrl`    | The imagae url related to the chapter             | String                                                          |    `https://image.com/image.png`                                   |
 
-## Chapters format
+## Credit format
 
-The json that is set to the `MediaTrack` that is a JSON object containing a list of chapter.
+| Key          | Description                                 | Format                                                          | Examples                               |
+|--------------|---------------------------------------------|-----------------------------------------------------------------|----------------------------------------|
+| `type`       | The type of the credit            | `OpeningCredit`, `ClosingCredit`                                                 | `ClosingCredit`                              |
+| `start` | The start position of the credit in milliseconds                       | Number                               | `0`
+| `end` | The end position of the credit in milliseconds         |  Number | `134789` |                           |
+
+
+## Pillarbox metadata
+
+The json to set into `MediaInfo.customData`.
 
 | Key          | Description                                 | Format                                                          | Examples                               |
 |--------------|---------------------------------------------|-----------------------------------------------------------------|----------------------------------------|
 | `chapters`       | List of chapters             | JSON array                                                 | `[{...}, {...}]`                              |
+| `credits`       | List of credits             | JSON array                                                 | `[{...}, {...}]`                              |
 
 ### Sample
 
@@ -47,5 +54,17 @@ The json that is set to the `MediaTrack` that is a JSON object containing a list
         "imageUrl": "https://image.png",
        }                
     ],
+    "credits": [
+        {
+            "type": "OpeningCredit",
+            "start": 10000,
+            "end": 20000,
+        },
+         {
+            "type": "ClosingCredit",
+            "start": 880000,
+            "end": 900000,
+        }
+    ]
 }
 ```
