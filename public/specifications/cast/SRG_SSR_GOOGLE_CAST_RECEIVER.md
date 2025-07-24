@@ -9,9 +9,9 @@ if both of them implements the same specification. Those metadata are stored ins
 
 ## Chapter format
 
-| Key          | Description                                 | Format                                                          | Examples                               |
-|--------------|---------------------------------------------|-----------------------------------------------------------------|----------------------------------------|
-| `id`       | A unique identifier of the chapter              | String                                                 | `urn:rts:video:1234`                              |
+| Key  | Description                        | Format | Examples             |
+|------|------------------------------------|--------|----------------------|
+| `id` | A unique identifier of the chapter | String | `urn:rts:video:1234` |
 | `start` | The start position of the chapter in milliseconds                       | Number                               | `0`
 | `end` | The end position of the chapter in milliseconds         |  Number | `134789` |
 | `title`  | The title of the chapter | String         | `Chapter title`   
@@ -20,9 +20,9 @@ if both of them implements the same specification. Those metadata are stored ins
 
 ## Credit format
 
-| Key          | Description                                 | Format                                                          | Examples                               |
-|--------------|---------------------------------------------|-----------------------------------------------------------------|----------------------------------------|
-| `type`       | The type of the credit            | `OpeningCredit`, `ClosingCredit`                                                 | `ClosingCredit`                              |
+| Key    | Description            | Format                           | Examples        |
+|--------|------------------------|----------------------------------|-----------------|
+| `type` | The type of the credit | `OpeningCredit`, `ClosingCredit` | `ClosingCredit` |
 | `start` | The start position of the credit in milliseconds                       | Number                               | `0`
 | `end` | The end position of the credit in milliseconds         |  Number | `134789` |                           |
 
@@ -40,11 +40,11 @@ if both of them implements the same specification. Those metadata are stored ins
 
 The json to set into `MediaInfo.customData`.
 
-| Key          | Description                                 | Format                                                          | Examples                               |
-|--------------|---------------------------------------------|-----------------------------------------------------------------|----------------------------------------|
-| `chapters`       | List of chapters             | JSON array                                                 | `[{...}, {...}]`                              |
-| `credits`       | List of credits             | JSON array                                                 | `[{...}, {...}]`                              |
-| `blockedTimeRanges`| List of blocked time ranges | JSON array | `[{...}, {...}]` |
+| Key                 | Description                 | Format     | Examples         |
+|---------------------|-----------------------------|------------|------------------|
+| `chapters`          | List of chapters            | JSON array | `[{...}, {...}]` |
+| `credits`           | List of credits             | JSON array | `[{...}, {...}]` |
+| `blockedTimeRanges` | List of blocked time ranges | JSON array | `[{...}, {...}]` |
 
 ### Sample
 
