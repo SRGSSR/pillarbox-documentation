@@ -31,7 +31,7 @@ and best practices.
 
 ## Apple Tools
 
-Here are some useful tools for Apple platforms
+Here are some useful tools for Apple platforms.
 
 | Repository Link                            | Demo Link                                          | Description                        |
 |--------------------------------------------|----------------------------------------------------|------------------------------------|
