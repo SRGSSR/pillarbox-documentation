@@ -28,3 +28,11 @@ and best practices.
 |------------------------------------------------------------------------------------|--------------------------------------|--------------------------------------------------|
 | [pillarbox-web-suite](https://github.com/SRGSSR/pillarbox-web-suite)               | [Demo](https://plugins.pillarbox.ch) | A collection of plugins, themes, and components. |
 | [pillarbox-web-theme-editor](https://github.com/SRGSSR/pillarbox-web-theme-editor) | [Demo](https://editor.pillarbox.ch)  | A tool for editing themes for the player.        |
+
+## Apple Tools
+
+Here are some useful tools for Apple platforms.
+
+| Repository Link                            | Demo Link                                          | Description                        |
+|--------------------------------------------|----------------------------------------------------|------------------------------------|
+| [castor](https://github.com/SRGSSR/castor) | [Demo](https://testflight.apple.com/join/3DMfy33Y) | A SDK built on top of Google Cast. |
