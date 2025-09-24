@@ -41,6 +41,6 @@ Here are some useful tools for Apple platforms.
 
 Here are some useful tools for Android platforms.
 
-| Repository Link                            | Demo Link                                          | Description                        |
-|--------------------------------------------|----------------------------------------------------|------------------------------------|
-| [MediaMaestro](https://github.com/SRGSSR/MediaMaestro) | [Demo](https://testflight.apple.com/join/3DMfy33Y) | Seamless integration of AndroidX MediaRouter with Compose. |
+| Repository Link                                        | Description                                                |
+|--------------------------------------------------------|------------------------------------------------------------|
+| [MediaMaestro](https://github.com/SRGSSR/MediaMaestro) | Seamless integration of AndroidX MediaRouter with Compose. |
