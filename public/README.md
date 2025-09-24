@@ -37,10 +37,10 @@ Here are some useful tools for Apple platforms.
 |--------------------------------------------|----------------------------------------------------|------------------------------------| -------------------|
 | [Castor](https://github.com/SRGSSR/castor) | [Demo](https://testflight.apple.com/join/3DMfy33Y) | An SDK for delightful Google Cast integration on iOS. | [Documentation](https://swiftpackageindex.com/SRGSSR/castor/documentation/castor) |
 
-### Android Tools
+## Android Tools
 
 Here are some useful tools for Android platforms.
 
-| Repository Link                                        | Description                                                |
-|--------------------------------------------------------|------------------------------------------------------------|
-| [MediaMaestro](https://github.com/SRGSSR/MediaMaestro) | Seamless integration of AndroidX MediaRouter with Compose. |
+| Repository Link                                        | Description                                                | Documentation Link                                      |
+|--------------------------------------------------------|------------------------------------------------------------| --------------------------------------------------------|
+| [MediaMaestro](https://github.com/SRGSSR/MediaMaestro) | Seamless integration of AndroidX MediaRouter with Compose. | [Documentation](https://srgssr.github.io/MediaMaestro/) |
