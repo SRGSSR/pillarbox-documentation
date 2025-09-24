@@ -35,7 +35,7 @@ Here are some useful tools for Apple platforms.
 
 | Repository Link                            | Demo Link                                          | Description                        | Documentation Link |
 |--------------------------------------------|----------------------------------------------------|------------------------------------| -------------------|
-| [castor](https://github.com/SRGSSR/castor) | [Demo](https://testflight.apple.com/join/3DMfy33Y) | An SDK for delightful Google Cast integration on iOS. | [Documentation](https://swiftpackageindex.com/SRGSSR/castor/documentation/castor) |
+| [Castor](https://github.com/SRGSSR/castor) | [Demo](https://testflight.apple.com/join/3DMfy33Y) | An SDK for delightful Google Cast integration on iOS. | [Documentation](https://swiftpackageindex.com/SRGSSR/castor/documentation/castor) |
 
 ### Android Tools
 
