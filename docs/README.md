@@ -11,7 +11,7 @@ To access the documentation, please visit: [Pillarbox Documentation][pillarbox-d
 
 ## How to Contribute
 
-We welcome contributions from everyone. The site is hosted on GitHub Pages and is powered by [docsify][docsify], served
+We welcome contributions from everyone and everywhere. The site is hosted on GitHub Pages and is powered by [docsify][docsify], served
 from the [public](../public) folder in this repository.
 
 Here's a brief overview of the project structure:
