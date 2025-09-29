@@ -23,4 +23,3 @@ jobs:
           source-dir: public
           preview-branch: gh-pages
           umbrella-dir: pr-preview
-          token: ${{ secrets.PREVIEW_TOKEN }}
