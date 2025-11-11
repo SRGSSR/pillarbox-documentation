@@ -94,6 +94,9 @@ For all other `ERROR` events (those not flagged as `business_error`), a second l
 * **Android**: Both the `log` and `name` fields are analyzed. Regex and keyword matching are used to infer the most
   likely cause.
 
+On Grafana Errors classified as `DRM_NOT_SUPPORTED` and `CONNECTION_ERROR` are excluded systematically from the
+error/success rate calculations.
+
 See: [ErrorProcessor][ErrorProcessor]
 
 [pillarbox-monitoring-infra]: https://github.com/SRGSSR/pillarbox-monitoring-infra
