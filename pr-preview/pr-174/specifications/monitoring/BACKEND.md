@@ -40,6 +40,24 @@ All events are enriched with a `user_ip` field by the `pillarbox-event-dispatche
 |-----------|-------------------------------------------------------------------------------------------------------------------------|--------|---------------|
 | `user_ip` | The resolved user IP, taken from the `X-Forwarded-For` header if available, otherwise from the client’s remote address. | String | `192.168.0.1` |
 
+#### Session data
+
+Before events are indexed in OpenSearch, the `pillarbox-monitoring-transfer` service enriches each event with a `session`
+object.
+
+This `session` object contains all the contextual properties originally provided in the data field of the corresponding
+`START` event (plus all the transformation listed below). Since the `START` event is the only one carrying complete
+device and context information. This mechanism simplifies querying by removing the need to join across multiple
+documents.
+
+The process works as follows:
+
+- When a `START` event is received, its `data` field is stored in a cache and copied into a new `session` object.
+  The original `data` field of the event is then cleared.
+- For all following events sharing the same `session` ID, the cached `session` data is automatically attached as the
+  `session` object.
+- Events without a corresponding `START` (and therefore no cached session) are ignored.
+
 ### Start Event `data`
 
 The `pillarbox-monitoring-transfer` service enriches `START` events with additional contextual information to make
