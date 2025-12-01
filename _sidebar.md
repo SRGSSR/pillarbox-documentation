@@ -7,6 +7,11 @@
 
 * [Monitoring](/specifications/monitoring/MONITORING.md)
 
+
+**Components**
+
+* [Monitoring Backend](/specifications/monitoring/BACKEND.md)
+
 **Methodology**
 
 * [Definition of Done](/methodology/DEFINITION_OF_DONE.md)
