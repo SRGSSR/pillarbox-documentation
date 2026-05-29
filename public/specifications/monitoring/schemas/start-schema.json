@@ -96,6 +96,10 @@
           "type": "object",
           "description": "Information about the media player.",
           "properties": {
+            "language": {
+              "type": "string",
+              "description": "The language as seen by the player."
+            },
             "name": {
               "type": "string",
               "description": "The name of the player (e.g., Pillarbox, Letterbox, video.js)."

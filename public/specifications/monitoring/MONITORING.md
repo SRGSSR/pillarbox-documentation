@@ -144,11 +144,12 @@ The `os` JSON data dictionary supports the following keys:
 
 The `player` JSON data dictionary supports the following keys:
 
-| Field      | Description         | Format                    | Examples                             |
-|------------|---------------------|---------------------------|--------------------------------------|
-| `name`     | The player name     | String                    | `Pillarbox`, `Letterbox`, `video.js` |
-| `platform` | The player platform | `Android`, `Apple`, `Web` | `Android`                            |
-| `version`  | The player version  | String                    | `1.2.3`                              |
+| Field      | Description                        | Format                                    | Examples                             |
+|------------|------------------------------------|-------------------------------------------|--------------------------------------|
+| `language` | The language as seen by the player | String (use standards like ISO or BCP 47) | `en`                                 |
+| `name`     | The player name                    | String                                    | `Pillarbox`, `Letterbox`, `video.js` |
+| `platform` | The player platform                | `Android`, `Apple`, `Web`                 | `Android`                            |
+| `version`  | The player version                 | String                                    | `1.2.3`                              |
 
 ### Quality of Experience Timings
 
@@ -212,6 +213,7 @@ The `screen` JSON data dictionary supports the following keys:
       "version": "18.0"
     },
     "player": {
+      "language": "en",
       "name": "Pillarbox",
       "platform": "Apple",
       "version": "2.0.0-49"
