@@ -71,6 +71,7 @@ The associated event data dictionary supports the following keys:
 |---------------|------------------------------|-----------------|-----------|
 | `application` | Application information      | JSON dictionary | `{ ... }` |
 | `browser`     | Browser information          | JSON dictionary | `{ ... }` |
+| `capabilities`| DRM capabilities             | JSON dictionary | `{ ... }` |
 | `device`      | Device information           | JSON dictionary | `{ ... }` |
 | `media`       | Media information            | JSON dictionary | `{ ... }` |
 | `os`          | Operating system information | JSON dictionary | `{ ... }` |
@@ -104,6 +105,24 @@ The `browser` JSON data dictionary supports the following keys:
 |-----------|---------------------|--------|---------------------|
 | `name`    | The browser name    | String | `Firefox`, `Safari` |
 | `version` | The browser version | String | `129.0`             |
+
+### Capabilities
+
+The `capabilities` JSON data dictionary supports the following keys, all optional:
+
+| Key          | Description              | Format          | Examples  |
+|--------------|--------------------------|-----------------|-----------|
+| `widevine`   | Widevine information     | JSON dictionary | `{ ... }` |
+| `fairPlay`   | FairPlay information     | JSON dictionary | `{ ... }` |
+| `playReady`  | PlayReady information    | JSON dictionary | `{ ... }` |
+| `clearKey`   | Clear Key information    | JSON dictionary | `{ ... }` |
+
+Each key system dictionary supports the following optional keys:
+
+| Field  | Description           | Format | Examples  |
+|--------|-----------------------|--------|-----------|
+| `level`| The security level    | String | `L1`      |
+| `hdcp` | The HDCP version      | String | `1.1`     |
 
 ### Device
 
@@ -197,6 +216,12 @@ The `screen` JSON data dictionary supports the following keys:
     "application": {
       "id": "ch.srgssr.Pillarbox-demo",
       "version": "1.0"
+    },
+    "capabilities": {
+      "widevine": {
+        "level": "L1",
+        "hdcp": "1.1"
+      }
     },
     "device": {
       "id": "8e9242a4-60b6-48f9-8dfb-6ee43e36c7eb",

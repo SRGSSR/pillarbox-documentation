@@ -35,6 +35,64 @@
             }
           }
         },
+        "capabilities": {
+          "type": "object",
+          "description": "Information about DRM capabilities.",
+          "properties": {
+            "widevine": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "description": "The security level."
+                },
+                "hdcp": {
+                  "type": "string",
+                  "description": "The HDCP version."
+                }
+              }
+            },
+            "fairPlay": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "description": "The security level."
+                },
+                "hdcp": {
+                  "type": "string",
+                  "description": "The HDCP version."
+                }
+              }
+            },
+            "playReady": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "description": "The security level."
+                },
+                "hdcp": {
+                  "type": "string",
+                  "description": "The HDCP version."
+                }
+              }
+            },
+            "clearKey": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "description": "The security level."
+                },
+                "hdcp": {
+                  "type": "string",
+                  "description": "The HDCP version."
+                }
+              }
+            }
+          }
+        },
         "device": {
           "type": "object",
           "description": "Information about the device on which the media is being played.",
