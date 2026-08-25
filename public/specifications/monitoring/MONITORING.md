@@ -76,9 +76,9 @@ The associated event data dictionary supports the following keys:
 | `media`       | Media information            | JSON dictionary | `{ ... }` |
 | `os`          | Operating system information | JSON dictionary | `{ ... }` |
 | `player`      | Player information           | JSON dictionary | `{ ... }` |
-| `screen`      | Screen information           | JSON dictionary | `{ ... }` |
 | `qoe_timings` | QoE timings                  | JSON dictionary | `{ ... }` |
 | `qos_timings` | QoS timings                  | JSON dictionary | `{ ... }` |
+| `screen`      | Screen information           | JSON dictionary | `{ ... }` |
 
 > [!WARNING]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
