@@ -138,12 +138,13 @@ The `device` JSON data dictionary supports the following keys:
 
 The `media` JSON data dictionary supports the following keys:
 
-| Field          | Description                                                  | Format | Examples                                                                                 |
-|----------------|--------------------------------------------------------------|--------|------------------------------------------------------------------------------------------|
-| `asset_url`    | The URL of the content being played                          | String | `https://...`                                                                            |
-| `id`           | A unique media identifier                                    | String | `urn:rts:video:123456`                                                                   |
-| `metadata_url` | The URL where media metadata was fetched                     | String | `https://...`                                                                            |
-| `origin`       | The URL of the web page in which the content is being played | String | `https://...`                                                                            |
+| Field              | Description                                                  | Format          | Examples                                                                                 |
+|--------------------|--------------------------------------------------------------|-----------------|------------------------------------------------------------------------------------------|
+| `asset_url`        | The URL of the content being played                          | String          | `https://...`                                                                            |
+| `id`               | A unique media identifier                                    | String          | `urn:rts:video:123456`                                                                   |
+| `metadata_headers` | Useful response headers received when fetching metadata      | JSON dictionary | `{ ... }`                                                                                |
+| `metadata_url`     | The URL where media metadata was fetched                     | String          | `https://...`                                                                            |
+| `origin`           | The URL of the web page in which the content is being played | String          | `https://...`                                                                            |
 
 Some remarks:
 
