@@ -31,6 +31,14 @@
           "type": "number",
           "description": "The content duration, as retrieved from the playlist, in milliseconds."
         },
+        "frame_drops": {
+          "type": "number",
+          "description": "The total number of frame drops experienced during the session."
+        },
+        "headers": {
+          "type": "object",
+          "description": "Useful response headers associated with the content being played."
+        },
         "log": {
           "description": "Any additional information that might be helpful for debugging or investigation purposes. This can be any data type, including strings, objects, or arrays.",
           "oneOf": [

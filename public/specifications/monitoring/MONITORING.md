@@ -76,9 +76,9 @@ The associated event data dictionary supports the following keys:
 | `media`       | Media information            | JSON dictionary | `{ ... }` |
 | `os`          | Operating system information | JSON dictionary | `{ ... }` |
 | `player`      | Player information           | JSON dictionary | `{ ... }` |
-| `screen`      | Screen information           | JSON dictionary | `{ ... }` |
 | `qoe_timings` | QoE timings                  | JSON dictionary | `{ ... }` |
 | `qos_timings` | QoS timings                  | JSON dictionary | `{ ... }` |
+| `screen`      | Screen information           | JSON dictionary | `{ ... }` |
 
 > [!WARNING]
 > Requirements for each key are not provided explicitly but implementations **SHOULD** fill as much information as
@@ -138,12 +138,13 @@ The `device` JSON data dictionary supports the following keys:
 
 The `media` JSON data dictionary supports the following keys:
 
-| Field          | Description                                                  | Format | Examples                                                                                 |
-|----------------|--------------------------------------------------------------|--------|------------------------------------------------------------------------------------------|
-| `asset_url`    | The URL of the content being played                          | String | `https://...`                                                                            |
-| `id`           | A unique media identifier                                    | String | `urn:rts:video:123456`                                                                   |
-| `metadata_url` | The URL where media metadata was fetched                     | String | `https://...`                                                                            |
-| `origin`       | The URL of the web page in which the content is being played | String | `https://...`                                                                            |
+| Field              | Description                                                  | Format          | Examples                                                                                 |
+|--------------------|--------------------------------------------------------------|-----------------|------------------------------------------------------------------------------------------|
+| `asset_url`        | The URL of the content being played                          | String          | `https://...`                                                                            |
+| `id`               | A unique media identifier                                    | String          | `urn:rts:video:123456`                                                                   |
+| `metadata_headers` | Useful response headers received when fetching metadata      | JSON dictionary | `{ ... }`                                                                                |
+| `metadata_url`     | The URL where media metadata was fetched                     | String          | `https://...`                                                                            |
+| `origin`           | The URL of the web page in which the content is being played | String          | `https://...`                                                                            |
 
 Some remarks:
 
@@ -275,6 +276,7 @@ The associated event data dictionary supports the following keys:
 |----------------------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | `audio`              | The audio track language code                                                                        | String (use standards like ISO or BCP 47)              | `en`                                                                                        |
 | `duration`           | The content duration, as retrieved from the playlist                                                 | Time in milliseconds                                   | `16548`                                                                                     |
+| `headers`            | Useful response headers associated with the content being played                                     | JSON dictionary                                        | `{ ... }`                                                                                   |
 | `log`                | Any additional information that might be helpful                                                     | Any                                                    | `{ ... }`, `[...]`, `Stack trace symbols: ...`                                              |
 | `message`            | The message associated with the error (might be localized)                                           | String                                                 | `Not found`                                                                                 |
 | `name`               | The name of the error                                                                                | String                                                 | `ERR-404`                                                                                   |
@@ -306,6 +308,10 @@ Some remarks:
 {
   "data": {
     "audio": "en",
+    "headers": {
+        "X-Amz-Cf-Id": "rEZ41zHijmTaPJrLdiavv7oU8giHtH8HQXvabc2QPAly_Btvu5C2Dw",
+        "Akamai-GRN": "0.05313217.1567801841.1457a3"
+    },
     "message": "Not found",
     "name": "PillarboxCoreBusiness.DataError(1)",
     "position": 1024,
@@ -340,6 +346,7 @@ The associated event data dictionary supports the following keys:
 | `buffered_duration`  | Duration of the content currently available in buffer                                                | Time in milliseconds                                   | `12000`                                                                                     |
 | `duration`           | The content duration, as retrieved from the playlist                                                 | Time in milliseconds                                   | `16548`                                                                                     |
 | `frame_drops`        | The total number of frame drops experienced during the session                                       | Number                                                 | `12`                                                                                        |
+| `headers`            | Useful response headers associated with the content being played                                     | JSON dictionary                                        | `{ ... }`                                                                                   |
 | `log`                | Any additional information that might be helpful                                                     | Any                                                    | `{ ... }`, `[...]`, `Stack trace symbols: ...`                                              |
 | `playback_duration`  | The duration of the playback session                                                                 | Time in milliseconds                                   | `40000`                                                                                     |
 | `position`           | The current player position, relative to the beginning of the playlist. Negative values are admitted | Time in milliseconds                                   | `16548`                                                                                     |
@@ -392,6 +399,10 @@ The stall duration **MUST** be measured in wall-clock time, independently of pla
     "buffered_duration": 36000,
     "duration": 2386040,
     "frame_drops": 2,
+    "headers": {
+        "X-Amz-Cf-Id": "rEZ41zHijmTaPJrLdiavv7oU8giHtH8HQXvabc2QPAly_Btvu5C2Dw",
+        "Akamai-GRN": "0.05313217.1567801841.1457a3"
+    },
     "playback_duration": 10663,
     "position": 10618,
     "stall": {
