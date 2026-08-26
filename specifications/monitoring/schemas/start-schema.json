@@ -125,6 +125,10 @@
               "type": "string",
               "description": "A unique media identifier."
             },
+            "metadata_headers": {
+              "type": "object",
+              "description": "Useful response headers received when fetching metadata."
+            },
             "metadata_url": {
               "type": "string",
               "format": "uri",
