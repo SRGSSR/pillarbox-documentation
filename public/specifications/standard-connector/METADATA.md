@@ -105,3 +105,58 @@ Describes a time range associated with the content.
 
 > [!INFO]
 > All keys listed above are mandatory.
+
+## Example
+
+```json
+{
+    "chapters": [
+        {
+            "endTime": 30000,
+            "identifier": "hill_valley_1955",
+            "posterUrl": "https://...",
+            "startTime": 10000,
+            "title": "Hill Valley, 1955"
+        }
+    ],
+    "customData": {
+    },
+    "description": "Picking up the story where Back to the Future (...)",
+    "drm": {
+        "certificateUrl": "https://...",
+        "keySystem": "FAIRPLAY",
+        "licenseUrl": "https://...",
+        "multisession": true
+    },
+    "episodeNumber": 2,
+    "identifier": "back_to_future_2",
+    "posterUrl": "https://...",
+    "seasonNumber": 1,
+    "source": {
+        "audioFragmentFormat": "TS",
+        "mimeType": "application/x-mpegURL",
+        "type": "ON-DEMAND",
+        "url": "https://...",
+        "videoFragmentFormat": "FMP4"
+    },
+    "subtitle": "Science-fiction",
+    "subtitles": [
+        {
+            "kind": "SUBTITLES",
+            "label": "English",
+            "language": "en",
+            "url": "https://..."
+        }
+    ],
+    "timeRanges": [
+        {
+            "endTime": 60000,
+            "startTime": "50000",
+            "type": "BLOCKED"
+        }
+    ],
+    "title": "Back to the Future II",
+    "version": 1,
+    "viewport": "STANDARD"
+}
+```
