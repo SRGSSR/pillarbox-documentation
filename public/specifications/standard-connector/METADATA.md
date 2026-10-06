@@ -160,3 +160,7 @@ Describes a time range associated with the content.
     "viewport": "STANDARD"
 }
 ```
+
+## JSON Schema
+
+[metadata-schema.json](specifications/standard-connector/schemas/metadata-schema.json ':ignore')
