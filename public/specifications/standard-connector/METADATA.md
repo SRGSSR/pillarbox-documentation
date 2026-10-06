@@ -9,7 +9,7 @@
 
 ## Introduction
 
-Metadata associated with media playback is usually pretty standard. As a user, you namely expect to know what is being played (stream URL, title, subtitle), have visually engaging artwork associated with the content (for example, on a mobile device’s lock screen), or navigate within the content.
+Metadata associated with media playback is usually pretty standard. A player namely expects to know what is being played (stream URL) and have basic metadata (title, subtitle, artwork) that can be displayed to the user.
 
 For products that do not already provide this metadata through a dedicated backend, Pillarbox defines a comprehensive, standard metadata format that can be adopted when implementing a playback metadata endpoint. All Pillarbox players natively understand this format, eliminating the need for custom metadata connector implementations.
 
