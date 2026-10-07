@@ -3,7 +3,7 @@
 ---
 
 **Version:** 2.0 |
-**Date:** Octover 07, 2026
+**Date:** October 07, 2026
 
 ---
 
