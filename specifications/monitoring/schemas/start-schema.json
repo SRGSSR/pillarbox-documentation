@@ -52,7 +52,7 @@
                 }
               }
             },
-            "fairPlay": {
+            "fair_play": {
               "type": "object",
               "properties": {
                 "level": {
@@ -65,7 +65,7 @@
                 }
               }
             },
-            "playReady": {
+            "play_ready": {
               "type": "object",
               "properties": {
                 "level": {
@@ -78,7 +78,7 @@
                 }
               }
             },
-            "clearKey": {
+            "clear_key": {
               "type": "object",
               "properties": {
                 "level": {
