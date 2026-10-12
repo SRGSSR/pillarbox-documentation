@@ -6,7 +6,7 @@
 **Specifications**
 
 * [Monitoring](/specifications/monitoring/MONITORING.md)
-
+* [Standard Connector](/specifications/standard-connector/METADATA.md)
 
 **Components**
 
