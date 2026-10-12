@@ -2,8 +2,8 @@
 
 ---
 
-**Version:** 1.0 |
-**Date:** August 19, 2024
+**Version:** 2.0 |
+**Date:** October 07, 2026
 
 ---
 
@@ -49,7 +49,7 @@ following keys:
 | `event_name` | The name of the event                       | `START`, `STOP`, `ERROR`, `HEARTBEAT`                           | `STOP`                                 |
 | `session_id` | A unique identifier for the session         | [UUID](https://www.itu.int/en/ITU-T/asn1/Pages/UUID/uuids.aspx) | `37b18444-76b6-4159-8539-d48ea5ecbc86` |
 | `timestamp`  | The timestamp at the time the event is sent | [Unix timestamp](https://unixtime.org) in milliseconds          | `1717665997932`                        |
-| `version`    | The version of the JSON format              | Number                                                          | 1                                      |
+| `version`    | The version of the JSON format              | Number                                                          | 2                                      |
 
 > [!WARNING]
 > All keys listed above are mandatory.
@@ -113,9 +113,9 @@ The `capabilities` JSON data dictionary supports the following keys, all optiona
 | Key          | Description              | Format          | Examples  |
 |--------------|--------------------------|-----------------|-----------|
 | `widevine`   | Widevine information     | JSON dictionary | `{ ... }` |
-| `fairPlay`   | FairPlay information     | JSON dictionary | `{ ... }` |
-| `playReady`  | PlayReady information    | JSON dictionary | `{ ... }` |
-| `clearKey`   | Clear Key information    | JSON dictionary | `{ ... }` |
+| `fair_play`  | FairPlay information     | JSON dictionary | `{ ... }` |
+| `play_ready` | PlayReady information    | JSON dictionary | `{ ... }` |
+| `clear_key`  | Clear Key information    | JSON dictionary | `{ ... }` |
 
 Each key system dictionary supports the following optional keys:
 
@@ -257,7 +257,7 @@ The `screen` JSON data dictionary supports the following keys:
   "event_name": "START",
   "session_id": "ebdb3da7-bc77-454e-9de0-a1dfa8091e84",
   "timestamp": 1723640597805,
-  "version": 1
+  "version": 2
 }
 ```
 
@@ -322,7 +322,7 @@ Some remarks:
   "event_name": "ERROR",
   "session_id": "ebdb3da7-bc77-454e-9de0-a1dfa8091e84",
   "timestamp": 1723640598877,
-  "version": 1
+  "version": 2
 }
 ```
 
@@ -416,6 +416,6 @@ The stall duration **MUST** be measured in wall-clock time, independently of pla
   "event_name": "STOP",
   "session_id": "ebdb3da7-bc77-454e-9de0-a1dfa8091e84",
   "timestamp": 1723640608474,
-  "version": 1
+  "version": 2
 }
 ```
