@@ -60,12 +60,12 @@ A JSON dictionary which can be used to convey any arbitrary useful information.
 
 The DRM configuration.
 
-| Key              | Description                 | Format                                            | Examples            | Mandatory? |
-|------------------|-----------------------------|---------------------------------------------------|---------------------|------------|
-| `certificateUrl` | The certificate URL         | String                                            | `https://...`       | N          |
-| `keySystem`      | The key system              | `WIDEVINE`, `FAIRPLAY`, `CLEAR_KEY`, `PLAY_READY` | `FAIRPLAY`          | Y          |
-| `licenseUrl`     | The license acquisition URL | String                                            | `https://...`       | Y          |
-| `multisession`   | If multi session is enabled | Boolean                                           | `true`              | N          |
+| Key              | Description                 | Format  | Examples            | Mandatory? |
+|------------------|-----------------------------|---------|---------------------|------------|
+| `certificateUrl` | The certificate URL         | String  | `https://...`       | N          |
+| `keySystem`      | The key system              | String  | `com.apple.fps`     | Y          |
+| `licenseUrl`     | The license acquisition URL | String  | `https://...`       | Y          |
+| `multisession`   | If multi session is enabled | Boolean | `true`              | N          |
 
 ### Source
 
@@ -124,7 +124,7 @@ Describes a time range associated with the content.
     "description": "Picking up the story where Back to the Future (...)",
     "drm": {
         "certificateUrl": "https://...",
-        "keySystem": "FAIRPLAY",
+        "keySystem": "com.apple.fps",
         "licenseUrl": "https://...",
         "multisession": true
     },
