@@ -6,7 +6,12 @@
 **Specifications**
 
 * [Monitoring](/specifications/monitoring/MONITORING.md)
-* [Google Cast](/specifications/cast/CAST.md)
+* [Standard Connector](/specifications/standard-connector/METADATA.md)
+
+**Components**
+
+* [Monitoring Backend](/specifications/monitoring/BACKEND.md)
+* [SRG SSR Google Cast Receiver](/specifications/cast/SRG_SSR_GOOGKE_CAST_RECEIVER.md)
 
 **Methodology**
 

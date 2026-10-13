@@ -28,3 +28,19 @@ and best practices.
 |------------------------------------------------------------------------------------|--------------------------------------|--------------------------------------------------|
 | [pillarbox-web-suite](https://github.com/SRGSSR/pillarbox-web-suite)               | [Demo](https://plugins.pillarbox.ch) | A collection of plugins, themes, and components. |
 | [pillarbox-web-theme-editor](https://github.com/SRGSSR/pillarbox-web-theme-editor) | [Demo](https://editor.pillarbox.ch)  | A tool for editing themes for the player.        |
+
+## Apple Tools
+
+Here are some useful tools for Apple platforms.
+
+| Repository Link                            | Demo Link                                          | Description                        | Documentation Link |
+|--------------------------------------------|----------------------------------------------------|------------------------------------| -------------------|
+| [Castor](https://github.com/SRGSSR/castor) | [Demo](https://testflight.apple.com/join/3DMfy33Y) | An SDK for delightful Google Cast integration on iOS. | [Documentation](https://swiftpackageindex.com/SRGSSR/castor/documentation/castor) |
+
+## Android Tools
+
+Here are some useful tools for Android platforms.
+
+| Repository Link                                        | Description                                                | Documentation Link                                      |
+|--------------------------------------------------------|------------------------------------------------------------| --------------------------------------------------------|
+| [MediaMaestro](https://github.com/SRGSSR/MediaMaestro) | Seamless integration of AndroidX MediaRouter with Compose. | [Documentation](https://srgssr.github.io/MediaMaestro/) |

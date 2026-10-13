@@ -1,5 +1,5 @@
 {
-  "$id": "https://github.com/SRGSSR/pillarbox-documentation/blob/main/Specifications/start-schema.json",
+  "$id": "https://github.com/SRGSSR/pillarbox-documentation/blob/main/public/specifications/monitoring/schemas/start-schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
@@ -35,6 +35,64 @@
             }
           }
         },
+        "capabilities": {
+          "type": "object",
+          "description": "Information about DRM capabilities.",
+          "properties": {
+            "widevine": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "description": "The security level."
+                },
+                "hdcp": {
+                  "type": "string",
+                  "description": "The HDCP version."
+                }
+              }
+            },
+            "fair_play": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "description": "The security level."
+                },
+                "hdcp": {
+                  "type": "string",
+                  "description": "The HDCP version."
+                }
+              }
+            },
+            "play_ready": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "description": "The security level."
+                },
+                "hdcp": {
+                  "type": "string",
+                  "description": "The HDCP version."
+                }
+              }
+            },
+            "clear_key": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "string",
+                  "description": "The security level."
+                },
+                "hdcp": {
+                  "type": "string",
+                  "description": "The HDCP version."
+                }
+              }
+            }
+          }
+        },
         "device": {
           "type": "object",
           "description": "Information about the device on which the media is being played.",
@@ -67,6 +125,10 @@
               "type": "string",
               "description": "A unique media identifier."
             },
+            "metadata_headers": {
+              "type": "object",
+              "description": "Useful response headers received when fetching metadata."
+            },
             "metadata_url": {
               "type": "string",
               "format": "uri",
@@ -96,6 +158,10 @@
           "type": "object",
           "description": "Information about the media player.",
           "properties": {
+            "language": {
+              "type": "string",
+              "description": "The language as seen by the player."
+            },
             "name": {
               "type": "string",
               "description": "The name of the player (e.g., Pillarbox, Letterbox, video.js)."

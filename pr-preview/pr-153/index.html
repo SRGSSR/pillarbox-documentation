@@ -45,7 +45,20 @@
 </script>
 <!-- Docsify v4 -->
 <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/@sy-records/docsify-footnotes@2/dist/index.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+<script>
+    window.$docsify = window.$docsify || {};
+    $docsify.plugins = [
+        ...(window.$docsify.plugins || []),
+        function (hook) {
+            hook.beforeEach(function (md) {
+                // Replace the emoji shortcode that the footnote plugin adds
+                return md.replace(/(<\/strong>):leftwards_arrow_with_hook:/g, '$1:');
+            });
+        }
+    ];
+</script>
 
 <script src="//unpkg.com/docsify-plugin-flexible-alerts"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>

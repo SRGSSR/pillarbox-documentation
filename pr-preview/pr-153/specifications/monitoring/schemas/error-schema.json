@@ -1,5 +1,5 @@
 {
-  "$id": "https://github.com/SRGSSR/pillarbox-documentation/blob/main/Specifications/error-schema.json",
+  "$id": "https://github.com/SRGSSR/pillarbox-documentation/blob/main/public/specifications/monitoring/schemas/error-schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
@@ -14,6 +14,10 @@
         "duration": {
           "type": "number",
           "description": "The content duration, as retrieved from the playlist, in milliseconds."
+        },
+        "headers": {
+          "type": "object",
+          "description": "Useful response headers associated with the content being played."
         },
         "log": {
           "description": "Any additional information that might be helpful for debugging or investigation purposes. This can be any data type, including strings, objects, or arrays.",
