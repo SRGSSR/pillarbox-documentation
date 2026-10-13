@@ -142,7 +142,7 @@ Describes a time range associated with the content.
     "timeRanges": [
         {
             "endTime": 60000,
-            "startTime": "50000",
+            "startTime": 50000,
             "type": "BLOCKED"
         }
     ],
