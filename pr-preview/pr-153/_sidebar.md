@@ -11,7 +11,7 @@
 **Components**
 
 * [Monitoring Backend](/specifications/monitoring/BACKEND.md)
-* [SRG SSR Google Cast Receiver](/specifications/cast/SRG_SSR_GOOGKE_CAST_RECEIVER.md)
+* [SRG SSR Google Cast Receiver](/specifications/cast/SRG_SSR_GOOGLE_CAST_RECEIVER.md)
 
 **Methodology**
 
