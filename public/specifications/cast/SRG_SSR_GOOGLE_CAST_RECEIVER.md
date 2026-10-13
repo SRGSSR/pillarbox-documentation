@@ -28,7 +28,7 @@ Receivers should also ensure that the corresponding `MediaInfo` in `MediaStatus`
 | `end`         | The end position of the chapter in milliseconds   | Number | `134789`                       |
 | `title`       | The title of the chapter                          | String | `Chapter title`                |
 | `description` | An optional description of the chapter            | String | `The description of a chapter` |
-| `imageUrl`    | The imagae url related to the chapter             | String | `https://image.com/image.png`  |
+| `imageUrl`    | The image url related to the chapter              | String | `https://image.com/image.png`  |
 
 ## Credit format
 
