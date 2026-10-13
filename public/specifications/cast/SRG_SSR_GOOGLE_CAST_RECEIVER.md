@@ -1,4 +1,13 @@
-# Google Cast specification
+# Google Cast Specification
+
+---
+
+**Version:** 1.0 |
+**Date:** October 13, 2026
+
+---
+
+## Introduction
 
 Pillarbox cast receiver and sender can handle Pillarbox custom metadata
 - Chapters
