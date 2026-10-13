@@ -9,12 +9,15 @@
 
 ## Introduction
 
-Pillarbox cast receiver and sender can handle Pillarbox custom metadata
+Cast receivers and senders can handle custom Pillarbox metadata, including:
+
 - Chapters
 - Credits
 - Blocked time ranges
 
-if senders and receiver implements the same specification. Those metadata are stored inside inside the `customData` field in the google cast object `MediaInfo` in `MediaQeueueItem`. Receivers should also make sure that the `MediaInfo` in `MediaStatus` is also updated.
+This is supported when both the sender and receiver implement the same metadata specification. The metadata is stored in the `customData` field of the Google Cast `MediaInfo` object contained in the `MediaQueueItem`.
+
+Receivers should also ensure that the corresponding `MediaInfo` in `MediaStatus` is kept up to date.
 
 ## Chapter format
 
