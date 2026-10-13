@@ -1,4 +1,4 @@
-# Google Cast Specification
+# SRG SSR Google Cast Receiver Specification
 
 ---
 
