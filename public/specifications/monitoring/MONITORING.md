@@ -49,7 +49,7 @@ following keys:
 | `event_name` | The name of the event                       | `START`, `STOP`, `ERROR`, `HEARTBEAT`                           | `STOP`                                 |
 | `session_id` | A unique identifier for the session         | [UUID](https://www.itu.int/en/ITU-T/asn1/Pages/UUID/uuids.aspx) | `37b18444-76b6-4159-8539-d48ea5ecbc86` |
 | `timestamp`  | The timestamp at the time the event is sent | [Unix timestamp](https://unixtime.org) in milliseconds          | `1717665997932`                        |
-| `version`    | The version of the JSON format              | Number                                                          | 2                                      |
+| `version`    | The version of the JSON format              | Integer                                                         | 2                                      |
 
 > [!WARNING]
 > All keys listed above are mandatory.
@@ -204,10 +204,10 @@ The `qos_timings` JSON data dictionary supports the following keys:
 
 The `screen` JSON data dictionary supports the following keys:
 
-| Field    | Description                 | Format | Examples |
-|----------|-----------------------------|--------|----------|
-| `height` | The screen height in pixels | Number | `2160`   |
-| `width`  | The screen width in pixels  | Number | `3840`   |
+| Field    | Description                 | Format  | Examples |
+|----------|-----------------------------|---------|----------|
+| `height` | The screen height in pixels | Integer | `2160`   |
+| `width`  | The screen width in pixels  | Integer | `3840`   |
 
 ### Example
 
@@ -341,11 +341,11 @@ The associated event data dictionary supports the following keys:
 |----------------------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | `airplay`            | A value indicating whether AirPlay is currently active                                               | Boolean                                                | `true`                                                                                      |
 | `audio`              | The audio track language code                                                                        | String (use standards like ISO or BCP 47)              | `en`                                                                                        |
-| `bandwidth`          | Bandwidth                                                                                            | Number in bits per second                              | `4000000`                                                                                   |
-| `bitrate`            | Bitrate of the content being played                                                                  | Number in bits per second                              | `1000000`                                                                                   |
+| `bandwidth`          | Bandwidth                                                                                            | Integer in bits per second                             | `4000000`                                                                                   |
+| `bitrate`            | Bitrate of the content being played                                                                  | Integer in bits per second                             | `1000000`                                                                                   |
 | `buffered_duration`  | Duration of the content currently available in buffer                                                | Time in milliseconds                                   | `12000`                                                                                     |
 | `duration`           | The content duration, as retrieved from the playlist                                                 | Time in milliseconds                                   | `16548`                                                                                     |
-| `frame_drops`        | The total number of frame drops experienced during the session                                       | Number                                                 | `12`                                                                                        |
+| `frame_drops`        | The total number of frame drops experienced during the session                                       | Integer                                                | `12`                                                                                        |
 | `headers`            | Useful response headers associated with the content being played                                     | JSON dictionary                                        | `{ ... }`                                                                                   |
 | `log`                | Any additional information that might be helpful                                                     | Any                                                    | `{ ... }`, `[...]`, `Stack trace symbols: ...`                                              |
 | `playback_duration`  | The duration of the playback session                                                                 | Time in milliseconds                                   | `40000`                                                                                     |
@@ -379,7 +379,7 @@ The `stall` JSON data dictionary supports the following keys:
 
 | Field      | Description                                               | Format               | Examples |
 |------------|-----------------------------------------------------------|----------------------|----------|
-| `count`    | The total number of stalls experienced during the session | Number               | `4`      |
+| `count`    | The total number of stalls experienced during the session | Integer              | `4`      |
 | `duration` | The total duration of stalls                              | Time in milliseconds | `9000`   |
 
 The stall duration **MUST** be measured in wall-clock time, independently of playback speed adjustments.
