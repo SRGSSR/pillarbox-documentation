@@ -20,14 +20,14 @@
                         "minLength": 1
                     },
                     "endTime": {
-                        "type": "number"
+                        "type": "integer"
                     },
                     "identifier": {
                         "type": "string",
                         "minLength": 1
                     },
                     "startTime": {
-                        "type": "number"
+                        "type": "integer"
                     }
                 }
             }
@@ -46,7 +46,7 @@
                 ],
                 "properties": {
                     "endTime": {
-                        "type": "number"
+                        "type": "integer"
                     },
                     "identifier": {
                         "type": "string",
@@ -57,7 +57,7 @@
                         "minLength": 1
                     },
                     "startTime": {
-                        "type": "number"
+                        "type": "integer"
                     },
                     "title": {
                         "type": "string",
@@ -78,10 +78,10 @@
                 ],
                 "properties": {
                     "endTime": {
-                        "type": "number"
+                        "type": "integer"
                     },
                     "startTime": {
-                        "type": "number"
+                        "type": "integer"
                     },
                     "type": {
                         "type": "string",
