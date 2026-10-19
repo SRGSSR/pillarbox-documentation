@@ -15,7 +15,7 @@
                 ],
                 "properties": {
                     "endTime": {
-                        "type": "number"
+                        "type": "integer"
                     },
                     "identifier": {
                         "type": "string",
@@ -26,7 +26,7 @@
                         "minLength": 1
                     },
                     "startTime": {
-                        "type": "number"
+                        "type": "integer"
                     },
                     "title": {
                         "type": "string",
@@ -71,7 +71,7 @@
             ]
         },
         "episodeNumber": {
-            "type": "number"
+            "type": "integer"
         },
         "identifier": {
             "type": "string",
@@ -82,7 +82,7 @@
             "minLength": 1
         },
         "seasonNumber": {
-            "type": "number"
+            "type": "integer"
         },
         "source": {
             "type": "object",
@@ -159,10 +159,10 @@
                 ],
                 "properties": {
                     "endTime": {
-                        "type": "number"
+                        "type": "integer"
                     },
                     "startTime": {
-                        "type": "number"
+                        "type": "integer"
                     },
                     "type": {
                         "type": "string",
@@ -176,7 +176,7 @@
             "minLength": 1
         },
         "version": {
-            "type": "number"
+            "type": "integer"
         },
         "viewport": {
             "type": "string",
