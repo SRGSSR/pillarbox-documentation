@@ -32,7 +32,7 @@ The Pillarbox standard metadata format is made of the following top-level struct
 | `subtitles`    | Information about external subtitles       | No        | JSON array (of _Subtitles_, see below)  | `[ ... ]`                                             |
 | `timeRanges`   | Time ranges                                | No        | JSON array (of _Time range_, see below) | `[ ... ]`                                             |
 | `title`        | A title describing the content             | No        | String                                  | `Back to the Future II`                               |
-| `version`      | The version of the JSON format             | No        | Number                                  | 1                                                     |
+| `version`      | The version of the JSON format             | No        | Integer                                 | 1                                                     |
 | `viewport`     | The viewport                               | No        | `STANDARD`, `MONOSCOPIC` (360°)         | `STANDARD`                                            |
 
 Objects appearing as JSON dictionaries or arrays are described below.

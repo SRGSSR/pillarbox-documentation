@@ -12,7 +12,7 @@
             "description": "The audio track language code."
         },
         "duration": {
-          "type": "number",
+          "type": "integer",
           "description": "The content duration, as retrieved from the playlist, in milliseconds."
         },
         "headers": {
@@ -36,7 +36,7 @@
           "description": "The name or code of the error (e.g., ERR-404)."
         },
         "position": {
-          "type": "number",
+          "type": "integer",
           "description": "The current player position relative to the beginning of the playlist, in milliseconds. Negative values are admitted."
         },
         "position_timestamp": {
